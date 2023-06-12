@@ -1,0 +1,15 @@
+{
+  "name": "alumni-association",
+  "version": "1.0.0",
+  "dependencies": {
+    "pinia": "^2.0.35"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.3.3",
+    "prettier": "^2.8.8"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  },
+  "licenses": []
+}

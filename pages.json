@@ -1,0 +1,378 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/student-verification/student-verification",
+      "style": {
+        "navigationBarTitleText": "学生认证",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/company-verification/company-verification",
+      "style": {
+        "navigationBarTitleText": "企业认证",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/job-search/job-search",
+      "style": {
+        "navigationBarTitleText": "职位搜索",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/job-details/job-details",
+      "style": {
+        "navigationBarTitleText": "职位详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/job-fair/job-fair",
+      "style": {
+        "navigationBarTitleText": "招聘会",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/job-fair-details/job-fair-details",
+      "style": {
+        "navigationBarTitleText": "招聘会详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/company-presentation-details/company-presentation-details",
+      "style": {
+        "navigationBarTitleText": "宣讲会详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/company-details/company-details",
+      "style": {
+        "navigationBarTitleText": "企业详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/message-center/message-center",
+      "style": {
+        "navigationBarTitleText": "消息",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/user-center/user-center",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/terms-of-service/terms-of-service",
+      "style": {
+        "navigationBarTitleText": "三方协议",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/signature/signature",
+      "style": {
+        "navigationBarTitleText": "签名",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/applied-resume/applied-resume",
+      "style": {
+        "navigationBarTitleText": "已投简历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/interview/interview",
+      "style": {
+        "navigationBarTitleText": "面试",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/interview-details/interview-details",
+      "style": {
+        "navigationBarTitleText": "面试详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-details/resume-details",
+      "style": {
+        "navigationBarTitleText": "简历详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/add-resume/add-resume",
+      "style": {
+        "navigationBarTitleText": "新增简历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-add-contact-info/resume-add-contact-info",
+      "style": {
+        "navigationBarTitleText": "简历新增联系方式",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-add-personal-description/resume-add-personal-description",
+      "style": {
+        "navigationBarTitleText": "简历新增个人描述",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-add-project-experience/resume-add-project-experience",
+      "style": {
+        "navigationBarTitleText": "简历新增项目经历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-add-work-experience/resume-add-work-experience",
+      "style": {
+        "navigationBarTitleText": "简历新增工作经历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-add-job-preference/resume-add-job-preference",
+      "style": {
+        "navigationBarTitleText": "简历新增工作经历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/interview-invitation-details/interview-invitation-details",
+      "style": {
+        "navigationBarTitleText": "面试邀请详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/job-offer-details/job-offer-details",
+      "style": {
+        "navigationBarTitleText": "入职邀请详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/settings/settings",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/favorite-jobs/favorite-jobs",
+      "style": {
+        "navigationBarTitleText": "已收藏职位",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/my-resume/my-resume",
+      "style": {
+        "navigationBarTitleText": "我的简历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/feedback/feedback",
+      "style": {
+        "navigationBarTitleText": "反馈建议",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/privacy-and-security/privacy-and-security",
+      "style": {
+        "navigationBarTitleText": "隐私安全",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-resume-search/com-resume-search",
+      "style": {
+        "navigationBarTitleText": "简历搜索",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-received-resumes/com-received-resumes",
+      "style": {
+        "navigationBarTitleText": "收到简历",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-refused-resumes/com-refused-resumes",
+      "style": {
+        "navigationBarTitleText": "不合适",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-interview-invitation/com-interview-invitation",
+      "style": {
+        "navigationBarTitleText": "面试邀请",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-interview-score/com-interview-score",
+      "style": {
+        "navigationBarTitleText": "面试评分",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-interview-details/com-interview-details",
+      "style": {
+        "navigationBarTitleText": "面试邀请详情",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-conversation/com-conversation",
+      "style": {
+        "navigationBarTitleText": "对话",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-job-management/com-job-management",
+      "style": {
+        "navigationBarTitleText": "职位管理",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-job-edit/com-job-edit",
+      "style": {
+        "navigationBarTitleText": "职位编辑",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-job-add/com-job-add",
+      "style": {
+        "navigationBarTitleText": "职位新增",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-resume-filter/com-resume-filter",
+      "style": {
+        "navigationBarTitleText": "简历过滤",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-company-settings/com-company-settings",
+      "style": {
+        "navigationBarTitleText": "企业设置",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "/pages/com-company-settings-workTime/com-company-settings-workTime",
+      "style": {
+        "navigationBarTitleText": "企业设置工作时间",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-company-settings-benefits/com-company-settings-benefits",
+      "style": {
+        "navigationBarTitleText": "企业设置福利",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-company-settings-contact/com-company-settings-contact",
+      "style": {
+        "navigationBarTitleText": "企业设置联系方式",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-campus-recruiting-fair-application/com-campus-recruiting-fair-application",
+      "style": {
+        "navigationBarTitleText": "申请宣讲会",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/com-campus-recruiting-fair-room-reservation/com-campus-recruiting-fair-room-reservation",
+      "style": {
+        "navigationBarTitleText": "申请宣讲会会议室预约",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tabBar/index.png",
+        "text": "首页",
+        "selectedIconPath": "static/images/tabBar/index-selected.png"
+      },
+      {
+        "pagePath": "pages/job-fair/job-fair",
+        "iconPath": "static/images/tabBar/job-fair.png",
+        "text": "招聘会",
+        "selectedIconPath": "static/images/tabBar/job-fair-selected.png"
+      },
+      {
+        "pagePath": "pages/message-center/message-center",
+        "iconPath": "static/images/tabBar/message-center.png",
+        "text": "消息中心",
+        "selectedIconPath": "static/images/tabBar/message-center-selected.png"
+      },
+      {
+        "pagePath": "pages/user-center/user-center",
+        "iconPath": "static/images/tabBar/user-center.png",
+        "text": "我的",
+        "selectedIconPath": "static/images/tabBar/user-center-selected.png"
+      }
+    ],
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": ""
+  },
+  "uniIdRouter": {}
+}

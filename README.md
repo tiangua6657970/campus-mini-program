@@ -1,0 +1,25 @@
+# 桂电校招小程序
+
+- vscode 配置文件
+- - extensions.json 会建议下载prettier格式化插件
+- common 公共代码目录
+- - hook 公共hook
+- - style 全局样式
+- - keys.ts 持久化的key
+- - navigate.ts 页面导航相关
+- - utils.ts 工具函数
+- components 自定义组件目录
+- doc 文档
+- pages 页面
+- service 服务接口相关
+- - base.ts 封装了请求接口的 HttpRequest
+- - 实例化HttpRequest
+- static 静态资源
+- store 全局状态管理
+- typings 全局类型
+- uni_modules 插件相关
+- .prettierrc 代码格式化配置
+- App.vue 应用根组件
+- index.html 使用构建工具vite必须的
+- mani.js 入口文件
+- ...
