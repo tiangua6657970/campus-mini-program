@@ -1,17 +1,25 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {
+  onPageScroll,
+  onPullDownRefresh,
+  onReachBottom,
+  onShareAppMessage,
+  onShareTimeline
+} from '@dcloudio/uni-app'
+  import { useJobList } from '@/service'
+
+  const { jobList, refresh } = useJobList()
+  refresh()
+</script>
 
 <template>
-  <view class="container">
-
+  <view class="index">
+    <cr-job-list :list="jobList"/>
   </view>
 </template>
 
 <style>
-  .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .index {
+
   }
 </style>

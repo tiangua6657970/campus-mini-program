@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	/*每个页面公共css */
-  @import '@/uni_modules/fant-mini-plus/libs/iconfont/iconfont.css';
+  @import './uni_modules/vk-uview-ui/index.scss';
+  @import 'common/style/base.scss';
 </style>

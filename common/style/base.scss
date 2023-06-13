@@ -1,0 +1,71 @@
+$cr-font-size-base: 28rpx;
+$cr-font-size-sm: 24rpx;
+$cr-font-size-sm-s: 20rpx;
+$cr-font-size-lg: 32rpx;
+
+$cr-font-color-base: #1a1a1a;
+$cr-font-color-paragraph: #666;
+$cr-font-color-grey: #999999;
+$cr-font-color-highlight: #2b85e4;
+$cr-font-color-price: #ff5200;
+.font-title {
+  font-size: $cr-font-size-lg;
+  color: $cr-font-color-base;
+  font-weight: bold;
+}
+.font-desc {
+  font-size: $cr-font-size-sm;
+  color: $cr-font-color-grey;
+}
+.font-mini {
+  font-size: $cr-font-size-sm-s;
+  color: $cr-font-color-grey;
+}
+.font-desc-light {
+  font-size: $cr-font-size-sm;
+  color: $cr-font-color-highlight;
+}
+.font-base {
+  font-size: $cr-font-size-sm;
+  color: $cr-font-color-base;
+}
+.font-paragraph {
+  font-size: $cr-font-size-base;
+  line-height: 40rpx;
+  color: $cr-font-color-paragraph;
+}
+
+.p-20 {
+  padding: 20rpx;
+}
+.pt-20 {
+  padding-top: 20rpx;
+}
+.pr-20 {
+  padding-right: 20rpx;
+}
+.pb-20 {
+  padding-bottom: 20rpx;
+}
+.pl-20 {
+  padding-left: 20rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+.mr-20 {
+  margin-right: 20rpx;
+}
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+.ml-20 {
+  margin-left: 20rpx;
+}
+.mr-20 {
+  margin-right: 20rpx;
+}
+.mt-10 {
+  margin-top: 10rpx;
+}

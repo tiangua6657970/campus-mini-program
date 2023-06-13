@@ -1,4 +1,5 @@
 import App from './App'
+import uView from './uni_modules/vk-uview-ui'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -13,10 +14,9 @@ app.$mount()
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
-import fantMini from '@/uni_modules/fant-mini-plus'
 export function createApp() {
   const app = createSSRApp(App)
-  app.use(fantMini)
+  app.use(uView)
   return {
     app
   }

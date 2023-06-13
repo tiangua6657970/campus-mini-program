@@ -3,7 +3,7 @@ import { HttpRequest, Methods } from './request'
 const devUrl = 'http://192.168.1.34:8084'
 const mockUrl = 'https://mock.apifox.cn/m1/2859811-0-default'
 const httpRequest = new HttpRequest({
-  baseUrl: devUrl,
+  baseUrl: mockUrl,
   loadingTime: 500,
   showLoading: false
 })
