@@ -40,7 +40,7 @@ export class HttpRequest {
     header: {},
     method: 'GET',
     dataType: 'json',
-    responseType: 'json',
+    responseType: 'text',
     showLoading: true,
     loadingText: '请求中...',
     loadingTime: 800,
@@ -60,7 +60,7 @@ export class HttpRequest {
   async request(options: RequestOptions): Promise<HttpResponse> {
     options.url = this.combineURL(this.config.baseUrl!, options.url)
     options.method = options.method || this.config.method
-    options.data = options.data = {}
+    options.data = options.data || {}
     options.header = options.header || this.config.header
     options.dataType = options.dataType || this.config.dataType
     options.responseType = options.responseType || this.config.responseType

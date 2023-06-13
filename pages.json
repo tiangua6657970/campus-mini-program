@@ -302,7 +302,7 @@
       }
     },
     {
-      "path": "/pages/com-company-settings-workTime/com-company-settings-workTime",
+      "path": "pages/com-company-settings-workTime/com-company-settings-workTime",
       "style": {
         "navigationBarTitleText": "企业设置工作时间",
         "enablePullDownRefresh": true

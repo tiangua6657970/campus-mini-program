@@ -1,10 +1,17 @@
-<script lang="ts" setup>
-  import { getJobList } from '@/service/base'
-  getJobList().then(res => console.log(res.data,'res.data'))
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <view class="content"> 首页 </view>
+  <view class="container">
+
+  </view>
 </template>
 
-<style></style>
+<style>
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

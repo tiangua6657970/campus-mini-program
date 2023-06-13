@@ -102,7 +102,7 @@ const pagePaths = {
   // 企业设置
   comCompanySettings: '/pages/com-company-settings/com-company-settings',
   // 企业设置工作时间
-  comCompanyWorkTimeSettings: '/pages/com-company-workTime-settings/com-company-workTime-settings',
+  comCompanyWorkTimeSettings: '/com-company-settings-workTime/com-company-settings-workTime',
   // 企业设置福利
   comCompanyBenefitsSettings: '/pages/com-company-benefits-settings/com-company-benefits-settings',
   // 企业设置联系方式

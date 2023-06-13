@@ -14,4 +14,5 @@
 
 <style>
 	/*每个页面公共css */
+  @import '@/uni_modules/fant-mini-plus/libs/iconfont/iconfont.css';
 </style>

@@ -13,8 +13,10 @@ app.$mount()
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
+import fantMini from '@/uni_modules/fant-mini-plus'
 export function createApp() {
   const app = createSSRApp(App)
+  app.use(fantMini)
   return {
     app
   }

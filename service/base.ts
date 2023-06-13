@@ -1,9 +1,13 @@
 import { HttpRequest, Methods } from './request'
 
+const devUrl = 'http://192.168.1.34:8084'
+const mockUrl = 'https://mock.apifox.cn/m1/2859811-0-default'
 const httpRequest = new HttpRequest({
-  baseUrl: 'https://mock.apifox.cn/m1/2859811-0-default',
-  loadingTime: 500
+  baseUrl: devUrl,
+  loadingTime: 500,
+  showLoading: false
 })
+
 export function request<R>(url: string, method: Methods, data: any = {}) {
   return httpRequest
     .request({
@@ -23,12 +27,15 @@ export function request<R>(url: string, method: Methods, data: any = {}) {
       return { err: 1, data: undefined as R }
     })
 }
-httpRequest.interceptor.request = (config) => {
+
+httpRequest.interceptor.request = config => {
+  console.log('interceptor.request', config)
   return config
 }
-// httpRequest.interceptor.response = (response) => {
-//   return response
-// }
+httpRequest.interceptor.response = (response) => {
+  console.log(response,'response')
+  return response
+}
 
 /**
  * @example
@@ -38,23 +45,17 @@ httpRequest.interceptor.request = (config) => {
  *   salary: number
  * }
  * export function getJobList() {
- *   return get<Array<Job>>('api/jobList')
+ *   return get<Array<Job>>("api/jobList")
  * }
  * @param url
  * @param params
  */
-export function get<R, P = {}>(url: string, params?: P) {
+export function get<R>(url: string, params?: any) {
   return request<R>(url, 'GET', params)
 }
-export function post<R, P = {}>(url: string, data?: P) {
-  return request<R>(url, 'POST', data)
-}
 
-interface Job {
-  jobTitle: string
-  workLocation: string
-  salary: number
-}
-export function getJobList() {
-  return get<Array<Job>>('api/jobList')
+export function post<R>(url: string, data?: any) {
+  return request<R>(url, 'POST', data).then(res => {
+    return res
+  })
 }
