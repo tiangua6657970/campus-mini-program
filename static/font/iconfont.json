@@ -1,0 +1,79 @@
+{
+  "id": "4121636",
+  "name": "campus-recruitment-mini-program",
+  "font_family": "iconfont",
+  "css_prefix_text": "cr-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5027",
+      "name": "手机",
+      "font_class": "phone",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "557037",
+      "name": "shezhi",
+      "font_class": "edit",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "666884",
+      "name": "删除",
+      "font_class": "delete",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "1125577",
+      "name": "工作经验",
+      "font_class": "workExperience",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "1183146",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "1411040",
+      "name": "人数统计",
+      "font_class": "renshutongji",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "5168120",
+      "name": "反馈信息",
+      "font_class": "fankuixinxi",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "7516912",
+      "name": "学历",
+      "font_class": "educationLevel",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "11902249",
+      "name": "导航",
+      "font_class": "navigation",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "18267970",
+      "name": "隐私保护",
+      "font_class": "yinsibaohu",
+      "unicode": "e99b",
+      "unicode_decimal": 59803
+    }
+  ]
+}

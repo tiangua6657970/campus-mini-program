@@ -1,25 +1,27 @@
 <script lang="ts" setup>
-import {
-  onPageScroll,
-  onPullDownRefresh,
-  onReachBottom,
-  onShareAppMessage,
-  onShareTimeline
-} from '@dcloudio/uni-app'
-  import { useJobList } from '@/service'
+  import { onReachBottom, onPullDownRefresh } from '@dcloudio/uni-app'
+  import { useSearchJobList } from '@/service'
+  import { navigateToJobDetails } from "@/common/navigates";
 
-  const { jobList, refresh } = useJobList()
+  const { query, loadResult, loadMore, loadStatus, refresh, noData } = useSearchJobList()
+  onReachBottom(loadMore)
+  onPullDownRefresh(async () => {
+    await refresh()
+    uni.stopPullDownRefresh()
+  })
   refresh()
+
 </script>
 
 <template>
   <view class="index">
-    <cr-job-list :list="jobList"/>
+    <cr-job-list :list="loadResult" @item-click="navigateToJobDetails"/>
+    <u-loadmore :status="loadStatus" v-if="loadResult.length" @loadmore="loadMore"/>
+    <cr-empty v-if="noData" />
   </view>
 </template>
 
 <style>
   .index {
-
   }
 </style>

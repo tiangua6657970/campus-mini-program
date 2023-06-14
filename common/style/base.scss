@@ -13,6 +13,11 @@ $cr-font-color-price: #ff5200;
   color: $cr-font-color-base;
   font-weight: bold;
 }
+.font-title-light {
+  font-size: $cr-font-size-lg;
+  color: $cr-font-color-highlight;
+  font-weight: bold;
+}
 .font-desc {
   font-size: $cr-font-size-sm;
   color: $cr-font-color-grey;
@@ -34,6 +39,11 @@ $cr-font-color-price: #ff5200;
   line-height: 40rpx;
   color: $cr-font-color-paragraph;
 }
+.font-money {
+  font-size: $cr-font-size-lg;
+  font-weight: bold;
+  color: $cr-font-color-price;
+}
 
 .p-20 {
   padding: 20rpx;
@@ -49,6 +59,9 @@ $cr-font-color-price: #ff5200;
 }
 .pl-20 {
   padding-left: 20rpx;
+}
+.p-30 {
+  padding: 30rpx;
 }
 
 .mt-20 {
@@ -68,4 +81,9 @@ $cr-font-color-price: #ff5200;
 }
 .mt-10 {
   margin-top: 10rpx;
+}
+@mixin center-wrap() {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }

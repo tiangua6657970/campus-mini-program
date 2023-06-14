@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "cr-icon"; /* Project id 4121636 */
+    src: url('font/iconfont.woff2?t=1686713349649') format('woff2'),
+    url('font/iconfont.woff?t=1686713349649') format('woff'),
+    url('font/iconfont.ttf?t=1686713349649') format('truetype');
+}
+
+.cr-icon {
+    font-family: "cr-icon", serif !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cr-icon-phone:before {
+    content: "\e600";
+}
+
+.cr-icon-edit:before {
+    content: "\e621";
+}
+
+.cr-icon-delete:before {
+    content: "\e68e";
+}
+
+.cr-icon-workExperience:before {
+    content: "\e61a";
+}
+
+.cr-icon-bianji:before {
+    content: "\e67f";
+}
+
+.cr-icon-renshutongji:before {
+    content: "\e623";
+}
+
+.cr-icon-fankuixinxi:before {
+    content: "\e614";
+}
+
+.cr-icon-educationLevel:before {
+    content: "\e611";
+}
+
+.cr-icon-navigation:before {
+    content: "\e60c";
+}
+
+.cr-icon-yinsibaohu:before {
+    content: "\e99b";
+}
+

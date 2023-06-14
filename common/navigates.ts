@@ -108,10 +108,11 @@ const pagePaths = {
   // 企业设置联系方式
   comCompanyContactSettings: '/pages/com-company-contact-settings/com-company-contact-settings',
   // 申请宣讲会
-  comCampusRecruitingFairApplication: 'com-campus-recruiting-fair-application/com-campus-recruiting-fair-application',
+  comCampusRecruitingFairApplication:
+    'com-campus-recruiting-fair-application/com-campus-recruiting-fair-application',
   // 申请宣讲会会议室预约
-  comCampusRecruitingFairRoomReservation: '/com-campus-recruiting-fair-room-reservation/com-campus-recruiting-fair-room-reservation',
-
+  comCampusRecruitingFairRoomReservation:
+    '/com-campus-recruiting-fair-room-reservation/com-campus-recruiting-fair-room-reservation'
 }
 /**
  * 必须登录才能访问的页面
@@ -142,109 +143,109 @@ export function switchTabToIndex(arg = {}) {
 }
 
 export function navigateToStudentVerification() {
-  navigateTo(pagePaths.studentVerification);
+  navigateTo(pagePaths.studentVerification)
 }
 
 export function navigateToCompanyVerification() {
-  navigateTo(pagePaths.companyVerification);
+  navigateTo(pagePaths.companyVerification)
 }
 
 export function navigateToJobSearch() {
-  navigateTo(pagePaths.jobSearch);
+  navigateTo(pagePaths.jobSearch)
 }
 
-export function navigateToJobDetails() {
-  navigateTo(pagePaths.jobDetails);
+export function navigateToJobDetails(item: Job) {
+  navigateTo(pagePaths.jobDetails, { id: item.id })
 }
 
 export function navigateToJobFair() {
-  navigateTo(pagePaths.jobFair);
+  navigateTo(pagePaths.jobFair)
 }
 
 export function navigateToJobFairDetails() {
-  navigateTo(pagePaths.jobFairDetails);
+  navigateTo(pagePaths.jobFairDetails)
 }
 
 export function navigateToCompanyPresentationDetails() {
-  navigateTo(pagePaths.companyPresentationDetails);
+  navigateTo(pagePaths.companyPresentationDetails)
 }
 
 export function navigateToCompanyDetails() {
-  navigateTo(pagePaths.companyDetails);
+  navigateTo(pagePaths.companyDetails)
 }
 
 export function navigateToTermsOfService() {
-  navigateTo(pagePaths.termsOfService);
+  navigateTo(pagePaths.termsOfService)
 }
 
 export function navigateToSignature() {
-  navigateTo(pagePaths.signature);
+  navigateTo(pagePaths.signature)
 }
 
 export function navigateToAppliedResume() {
-  navigateTo(pagePaths.appliedResume);
+  navigateTo(pagePaths.appliedResume)
 }
 
 export function navigateToInterview() {
-  navigateTo(pagePaths.interview);
+  navigateTo(pagePaths.interview)
 }
 
 export function navigateToInterviewDetails() {
-  navigateTo(pagePaths.interviewDetails);
+  navigateTo(pagePaths.interviewDetails)
 }
 
 export function navigateToMyResume() {
-  navigateTo(pagePaths.myResume);
+  navigateTo(pagePaths.myResume)
 }
 
 export function navigateToResumeDetails() {
-  navigateTo(pagePaths.resumeDetails);
+  navigateTo(pagePaths.resumeDetails)
 }
 
 export function navigateToAddResume() {
-  navigateTo(pagePaths.addResume);
+  navigateTo(pagePaths.addResume)
 }
 
 export function navigateToResumeAddContactInfo() {
-  navigateTo(pagePaths.resumeAddContactInfo);
+  navigateTo(pagePaths.resumeAddContactInfo)
 }
 
 export function navigateToResumeAddPersonalDescription() {
-  navigateTo(pagePaths.resumeAddPersonalDescription);
+  navigateTo(pagePaths.resumeAddPersonalDescription)
 }
 
 export function navigateToResumeAddProjectExperience() {
-  navigateTo(pagePaths.resumeAddProjectExperience);
+  navigateTo(pagePaths.resumeAddProjectExperience)
 }
 
 export function navigateToResumeAddWorkExperience() {
-  navigateTo(pagePaths.resumeAddWorkExperience);
+  navigateTo(pagePaths.resumeAddWorkExperience)
 }
 
 export function navigateToResumeAddJobPreference() {
-  navigateTo(pagePaths.resumeAddJobPreference);
+  navigateTo(pagePaths.resumeAddJobPreference)
 }
 
 export function navigateToSettings() {
-  navigateTo(pagePaths.settings);
+  navigateTo(pagePaths.settings)
 }
 
 export function navigateToInterviewInvitationDetails() {
-  navigateTo(pagePaths.interviewInvitationDetails);
+  navigateTo(pagePaths.interviewInvitationDetails)
 }
 
 export function navigateToJobOfferDetails() {
-  navigateTo(pagePaths.jobOfferDetails);
+  navigateTo(pagePaths.jobOfferDetails)
 }
 
 export function navigateToFavoriteJobs() {
-  navigateTo(pagePaths.favoriteJobs);
+  navigateTo(pagePaths.favoriteJobs)
 }
 
 export function navigateToFeedback() {
-  navigateTo(pagePaths.feedback);
+  navigateTo(pagePaths.feedback)
 }
 
 export function navigateToPrivacyAndSecurity() {
-  navigateTo(pagePaths.privacyAndSecurity);
+  navigateTo(pagePaths.privacyAndSecurity)
 }

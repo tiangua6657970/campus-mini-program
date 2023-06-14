@@ -1,24 +1,54 @@
 import { get } from '@/service/base'
-import { ref } from 'vue'
+import { Ref, ref } from 'vue'
+import { useSearch } from '@/common/hooks/use-search'
 
 interface JobListParams {
   pageNum: number
   pageSize: number
+
+  [prop: string]: any
 }
 
 export const getJobList = (params: JobListParams) => get<Array<Job>>('api/jobList', params)
 
-export const getJobDetail = (params: { id: number }) => get<Job>('api/jobDetail', params)
+export const getJobDetail = (params: { id: number }) => get<Job>('api/jodInfo', params)
 
-export function useJobList() {
-  const jobList = ref<Array<Job>>([])
-  async function _getJobList() {
-    const { data } = await getJobList({ pageNum: 1, pageSize: 10 })
+async function _getJobList(params: JobListParams) {
+  const { data } = await getJobList(params)
+  return data
+}
+
+export function useSearchJobList() {
+  const {
+    query,
+    loadResult,
+    loadStatus,
+    noData,
+    refresh,
+    loadMore,
+    setParamsAndRefresh,
+    resetParamsAndRefresh
+  } =  useSearch(_getJobList)
+  return {
+    query,
+    loadResult: loadResult as unknown as Ref<Array<Job>>,
+    loadStatus,
+    noData,
+    refresh,
+    loadMore,
+    setParamsAndRefresh,
+    resetParamsAndRefresh
+  }
+}
+
+export function useJobDetails(props: Id) {
+  const jobDetails  = ref<Job>()
+  async function _getJobDetail() {
+    const { data } = await getJobDetail(props)
     return data
-   
   }
   async function refresh() {
-    jobList.value = await  _getJobList()
+    jobDetails.value = await _getJobDetail()
   }
-  return { jobList, refresh }
+  return { jobDetails, refresh}
 }
