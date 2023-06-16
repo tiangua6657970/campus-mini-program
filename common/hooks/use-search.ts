@@ -2,28 +2,33 @@ import { ref, watch } from 'vue'
 import { debounce } from '@/common/utils'
 
 interface Params {
-  pageNum: number
-  pageSize: number
+  pageNum?: number
+  pageSize?: number
+  id?:number
 
   [prop: string]: any
 }
 
-export function useSearch<F extends (params: Params) => any>(fetch: F) {
+export function useSearch<R>(fetch:  (params: any) => any) {
   const query = ref('')
-  const loadResult = ref([])
+  const loadResult = ref<R[]>([])
   const loadStatus = ref('loadmore') // loadmore | loading | nomore
   const noData = ref(false)
   const params: Params = { pageNum: 1, pageSize: 10 }
+  const queryCallbacks: ((query: string) => any)[] = []
   watch(query, newVal => {
     params.query = newVal
-    debounce(() => refresh())
+    debounce(async () => {
+      await refresh()
+      queryCallbacks.forEach(callback => callback(newVal))
+    })
   })
 
   async function loadMore(callback?: Function) {
     if (loadStatus.value === 'nomore') {
       return
     }
-    params.pageNum++
+    params.pageNum!++
     loadStatus.value = 'loading'
     const data = await fetch(params)
     _setLoadStatus(data.length)
@@ -61,6 +66,10 @@ export function useSearch<F extends (params: Params) => any>(fetch: F) {
     }
     return await refresh(callback)
   }
+  
+  function setQueryCallback(callback: (query: string) => any) {
+    queryCallbacks.push(callback)
+  }
 
   return {
     query,
@@ -70,6 +79,7 @@ export function useSearch<F extends (params: Params) => any>(fetch: F) {
     refresh,
     loadMore,
     setParamsAndRefresh,
-    resetParamsAndRefresh
+    resetParamsAndRefresh,
+    setQueryCallback
   }
 }

@@ -13,7 +13,7 @@ export function joinUrl(path: string, params: any = {}) {
   )
 }
 
-const pagePaths = {
+export const pagePaths = {
   // 登录
   login: '/pages/login/login',
   // 首页
@@ -31,7 +31,7 @@ const pagePaths = {
   // 招聘会详情
   jobFairDetails: '/pages/job-fair-details/job-fair-details',
   // 宣讲会详情
-  companyPresentationDetails: '/pages/company-presentation-details/company-presentation-details',
+  employerTalkDetails: '/pages/employer-talk-details/employer-talk-details',
   // 企业详情
   companyDetails: '/pages/company-details/company-details',
   // 消息中心
@@ -114,6 +114,11 @@ const pagePaths = {
   comCampusRecruitingFairRoomReservation:
     '/com-campus-recruiting-fair-room-reservation/com-campus-recruiting-fair-room-reservation'
 }
+
+
+declare global {
+  type PageName = keyof typeof pagePaths
+}
 /**
  * 必须登录才能访问的页面
  * @type {string[]}
@@ -133,6 +138,7 @@ export function navigateTo(path: string, params = {}) {
     fail: err => console.log('[uni.navigateTo err]', err)
   })
 }
+
 
 export function navigateToLogin() {
   navigateTo(pagePaths.login)
@@ -162,16 +168,16 @@ export function navigateToJobFair() {
   navigateTo(pagePaths.jobFair)
 }
 
-export function navigateToJobFairDetails() {
-  navigateTo(pagePaths.jobFairDetails)
+export function navigateToJobFairDetails(item: JobFair) {
+  navigateTo(pagePaths.jobFairDetails, { id: item.id })
 }
 
-export function navigateToCompanyPresentationDetails() {
-  navigateTo(pagePaths.companyPresentationDetails)
+export function navigateToCompanyPresentationDetails(item: EmployerTalk) {
+  navigateTo(pagePaths.employerTalkDetails, { id: item.id })
 }
 
-export function navigateToCompanyDetails() {
-  navigateTo(pagePaths.companyDetails)
+export function navigateToCompanyDetails(item: Company) {
+  navigateTo(pagePaths.companyDetails, { id: item.id })
 }
 
 export function navigateToTermsOfService() {

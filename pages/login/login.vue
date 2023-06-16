@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { loginWithWx } from '@/service/auth'
-  import { ref } from 'vue/dist/vue'
+  import { ref } from 'vue'
 
   const userInfo = ref({
     avatarUrl: ''

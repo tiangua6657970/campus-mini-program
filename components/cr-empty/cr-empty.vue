@@ -15,15 +15,16 @@
     | 'list'
     | 'data'
   interface Props {
-    top: number
-    mode: Mode
+    top?: number
+    topPx?: number
+    mode?: Mode
   }
   withDefaults(defineProps<Props>(), { show: false, top: 0, mode: 'list' })
 </script>
 
 <template>
   <view class="aa-empty" :style="{ top: top + 'rpx' }">
-    <u-empty :mode="mode"></u-empty>
+    <u-empty :mode="mode!"></u-empty>
   </view>
 </template>
 
@@ -37,5 +38,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
   }
 </style>

@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import { useJobDetails } from '@/service'
+  import { navigateToCompanyDetails } from "@/common/navigates";
 
   interface Props {
     id: number
   }
+
   const props = defineProps<Props>()
   const { jobDetails, refresh } = useJobDetails(props)
   refresh()
@@ -29,16 +31,41 @@
           :label="jobDetails.educationLevel"
         ></u-icon>
       </view>
-      <view class="job-details-base__money font-money">{{
-        jobDetails.minSalary + '-' + jobDetails.maxSalary + 'k'
-      }}</view>
+      <view class="job-details-base__money font-money"
+        >{{ jobDetails.minSalary + '-' + jobDetails.maxSalary + 'k' }}
+      </view>
     </view>
-    <cr-company-item :company="jobDetails.enterprise" />
+    <cr-company-item :company="jobDetails.enterprise" @click="navigateToCompanyDetails"/>
     <view class="font-title-light">岗位职责</view>
     <view class="font-paragraph" v-for="item in jobDetails.jobResponsibility.split('；')">{{ item }}</view>
     <view class="font-title-light">任职要求</view>
     <view class="font-paragraph" v-for="item in jobDetails.jobRequirement.split('；')">{{ item }}</view>
     <view class="font-title-light">职位福利</view>
+    <cr-tag-list :list="jobDetails.jobBenefits.split(',')" />
+    <view style="height: 120rpx"></view>
+    <view class="cr-fixed-bottom">
+      <u-button class="cr-flex-1" :type="'primary'">我要投简历</u-button>
+      <u-button class="ml-10" open-type="share">
+        <u-icon
+          name="share"
+          :size="30"
+          color="#2b85e4"
+          label="分享"
+          label-color="#2b85e4"
+          @click="$emit('share')"
+        />
+      </u-button>
+      <u-button class="ml-10">
+        <u-icon
+          name="star"
+          :size="30"
+          color="#2b85e4"
+          label="收藏"
+          label-color="#2b85e4"
+          @click="$emit('contact')"
+        />
+      </u-button>
+    </view>
   </view>
 </template>
 
@@ -46,16 +73,19 @@
   .job-details-base {
     position: relative;
     margin-bottom: 50rpx;
+
     .info-list-h {
       display: flex;
       align-items: center;
     }
+
     .job-details-base__money {
       position: absolute;
       top: 0;
       right: 0;
     }
   }
+
   .font-title-light {
     margin: 30rpx 0;
   }

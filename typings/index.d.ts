@@ -1,4 +1,5 @@
-interface Typings {
-  name: string,
-  age: number
+interface Swiper {
+  pic: string,
+  jumpPage?: PageName,
+  params: object
 }

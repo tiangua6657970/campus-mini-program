@@ -44,3 +44,23 @@ export function debounce(func: Function, wait = 500, immediate = false) {
     }, wait)
   }
 }
+
+export function calculateNewTime(startTime: string, endTime: string) {
+  const start = new Date(startTime)
+  const end = new Date(endTime)
+
+  const startStr = `${start.getFullYear()}年 ${start.getMonth() + 1}月${start.getDate()}日 ${start.getHours()}:00`
+  const endStr = `${end.getHours()}:00`
+
+  return startStr + `-${endStr}`
+}
+
+export function formatDateStartByMonth(time: string) {
+  const dateObj = new Date(time)
+  const month = dateObj.getMonth() + 1
+  const date = dateObj.getDate()
+  const hour = dateObj.getHours()
+  const minute = dateObj.getMinutes()
+
+  return `${month}月${date}日 ${hour}:${minute}`
+}

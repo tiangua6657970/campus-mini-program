@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "167431",
+      "name": "datetime",
+      "font_class": "datetime",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "1601821",
+      "name": "企业",
+      "font_class": "company",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
       "icon_id": "5027",
       "name": "手机",
       "font_class": "phone",

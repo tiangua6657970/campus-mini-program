@@ -5,14 +5,14 @@
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "首页",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "navigationStyle": "custom"
       }
     },
     {
       "path": "pages/login/login",
       "style": {
-        "navigationBarTitleText": "登录",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "登录"
       }
     },
     {
@@ -54,11 +54,11 @@
       "path": "pages/job-fair-details/job-fair-details",
       "style": {
         "navigationBarTitleText": "招聘会详情",
-        "enablePullDownRefresh": true
+        "navigationStyle": "custom"
       }
     },
     {
-      "path": "pages/company-presentation-details/company-presentation-details",
+      "path": "pages/employer-talk-details/employer-talk-details",
       "style": {
         "navigationBarTitleText": "宣讲会详情",
         "enablePullDownRefresh": true
@@ -68,7 +68,8 @@
       "path": "pages/company-details/company-details",
       "style": {
         "navigationBarTitleText": "企业详情",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "navigationStyle": "custom"
       }
     },
     {
@@ -371,9 +372,9 @@
         "selectedIconPath": "static/images/tabBar/user-center-selected.png"
       }
     ],
-    "color": "",
-    "selectedColor": "",
-    "backgroundColor": ""
+    "color": "#999999",
+    "selectedColor": "#2076FD",
+    "backgroundColor": "#ffffff"
   },
   "uniIdRouter": {}
 }
