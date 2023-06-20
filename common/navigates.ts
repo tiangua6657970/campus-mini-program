@@ -18,8 +18,10 @@ export const pagePaths = {
   login: '/pages/login/login',
   // 首页
   index: '/pages/index/index',
+  // 角色选择
+  roleSelection: '/pages/role-selection/role-selection',
   // 学生认证
-  studentVerification: '/pages/student-verification/student-verification',
+  verification: '/pages/verification/verification',
   // 企业认证
   companyVerification: '/pages/company-verification/company-verification',
   // 职位搜索
@@ -62,7 +64,7 @@ export const pagePaths = {
   resumeAddProjectExperience: '/pages/resume-add-project-experience/resume-add-project-experience',
   // 简历新增工作经历
   resumeAddWorkExperience: '/pages/resume-add-work-experience/resume-add-work-experience',
-  // 简历求职意向
+  // 简历新增求职意向
   resumeAddJobPreference: '/pages/resume-add-job-preference/resume-add-job-preference',
   // 设置
   settings: '/pages/settings/settings',
@@ -143,13 +145,16 @@ export function navigateTo(path: string, params = {}) {
 export function navigateToLogin() {
   navigateTo(pagePaths.login)
 }
+export function navigateToRoleSelection() {
+  navigateTo(pagePaths.roleSelection)
+}
 
 export function switchTabToIndex(arg = {}) {
   uni.switchTab({ url: pagePaths.index })
 }
 
-export function navigateToStudentVerification() {
-  navigateTo(pagePaths.studentVerification)
+export function navigateToVerification(navTitle: string) {
+  navigateTo(pagePaths.verification, { navTitle })
 }
 
 export function navigateToCompanyVerification() {

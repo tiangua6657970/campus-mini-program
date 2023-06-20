@@ -56,10 +56,6 @@ interface Job {
    */
   minSalary: number
   /**
-   * 职位福利
-   */
-  jobBenefits: string
-  /**
    * 招聘人数
    */
   needNum: number

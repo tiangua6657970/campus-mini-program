@@ -4,7 +4,9 @@ import { useSearch } from '@/common/hooks/use-search'
 
 export const getJobFairList = (params?: PagingParams) => get<JobFair[]>('app/jobFairs/dc/list', params)
 export const getEmployerTalkList = (params?: PagingParams) => get<EmployerTalk[]>('app/jobFairs/sm/list', params)
-export const getJobFairDetails = (params: Id) => get<JobFair>('app/jobFairDetail', params)
+export const getJobFairDetails = (params: Id) => get<JobFair>('api/jobFairDetail', params)
+export const getEmployerTalkDetails = (params?: PagingParams) =>
+  get<EmployerTalk>('api/employerTalkDetails', params)
 
 async function _getJobFairList() {
   const { data } = await getJobFairList()
@@ -39,13 +41,24 @@ export function useEmployerTalkList() {
 }
 
 export function useJobFairDetails(props: Id) {
-    const jobFairDetails = ref<JobFair>()
+  const jobFairDetails = ref<JobFair>()
   async function _getJobFairDetails() {
-    const { data} = await getJobFairDetails(props)
+    const { data } = await getJobFairDetails(props)
     return data
   }
   async function refresh() {
-     jobFairDetails.value = await _getJobFairDetails()
+    jobFairDetails.value = await _getJobFairDetails()
   }
   return { jobFairDetails, refresh }
+}
+export function useEmployerTalkDetails() {
+  const employerTalkDetails = ref<EmployerTalk>()
+  async function _getEmployerTalkDetails() {
+    const { data } = await getEmployerTalkDetails()
+    return data
+  }
+  async function refresh() {
+    employerTalkDetails.value = await _getEmployerTalkDetails()
+  }
+  return { employerTalkDetails, refresh }
 }

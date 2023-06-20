@@ -84,7 +84,7 @@ interface Company {
   /**
    * 福利（如：双休,五险,年假）
    */
-  welfare?: string;
+  welfare: string;
   /**
    * 工作日（星期一，星期二）
    */

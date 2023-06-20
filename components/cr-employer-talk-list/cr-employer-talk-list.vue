@@ -14,7 +14,7 @@
 <template>
   <view class="cr-employer-talk-list">
     <view class="cr-employer-talk-item p-30" v-for="item in list" :key="item.id" @click="$emit('itemClick', item)">
-      <u-image class="cr-employer-talk-item-image" :src="item.logo" width="200" height="200" />
+      <u-image class="cr-employer-talk-item-image" :src="item.enterprise.logo" width="200" height="200" />
       <view class="cr-employer-talk-item-content">
         <view class="title-and-tag">
           <view class="font-title">{{ item.title }}</view>

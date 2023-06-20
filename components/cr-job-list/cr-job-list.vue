@@ -18,7 +18,4 @@
 </template>
 
 <style scoped lang="scss">
-  .job-list {
-    background-color: #f3f8ff;
-  }
 </style>

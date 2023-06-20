@@ -1,7 +1,7 @@
-import { get } from "@/service/base";
-import { ref } from "vue";
+import { get } from '@/service/base'
+import { ref } from 'vue'
 
-export const getMessageList = (params?: any) => get<Message[]>('api/messageList')
+export const getMessageList = (params?: any) => get<Message[]>('api/messageList', params)
 
 export function useMessageList() {
   const messageList = ref<Message[]>([])

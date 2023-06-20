@@ -62,60 +62,39 @@ interface EmployerTalk {
   /**
    * 报名结束时间
    */
-  applyEndTime?: string;
+  applyEndTime: string;
   /**
    * 报名开始时间
    */
-  applyStartTime?: string;
+  applyStartTime: string;
   /**
    * 学校ID
    */
-  collegeId?: number;
-  /**
-   * 企业全称
-   */
-  companyFullName?: string;
+  collegeId: number;
   /**
    * 宣讲会详情
    */
-  content?: string;
+  content: string;
   /**
    * 院系名
    */
-  depatmentName?: string;
+  depatmentName: string;
   /**
    * 结束时间
    */
   endTime: string;
+  enterprise: Company;
   /**
    * 企业ID
    */
-  enterpriseId?: number;
+  enterpriseId: number;
+  id: number;
   /**
-   * 融资状态
+   * 职位ids
    */
-  financingState?: string;
-  id?: number;
-  /**
-   * 行业名
-   */
-  industryName?: string;
-  /**
-   * 在招职位数
-   */
-  jobCount?: number;
-  /**
-   * 职位标签
-   */
+  jobIds: string;
   jobTags: string;
-  /**
-   * 企业log
-   */
-  logo: string;
-  /**
-   * 企业规模
-   */
-  staffSize?: string;
+  meetingRoom: MeetingRoom;
   /**
    * 开始时间
    */
@@ -127,5 +106,5 @@ interface EmployerTalk {
   /**
    * 宣讲会标题
    */
-  title?: string;
+  title: string;
 }

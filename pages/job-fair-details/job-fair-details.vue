@@ -7,7 +7,7 @@
   import { navigateToJobDetails, navigateToCompanyDetails } from '@/common/navigates'
 
   interface Props {
-    id: number
+    id: string
   }
 
   const props = defineProps<Props>()
@@ -16,10 +16,10 @@
   const tabs = [{ name: '参与公司' }, { name: '招聘职位' }]
   const { jobFairDetails, refresh } = useJobFairDetails(props)
   const { companyList, refresh: refreshCompanyList, noData: companyNoData } = useCompanyList(props)
-  const { jobList, refresh: refreshJobList, noData: jobNoData } = useJobList(props)
+  const { jobList, refresh: refreshJobList, noData: jobNoData } = useJobList()
   refresh()
   refreshCompanyList()
-  refreshJobList()
+  refreshJobList('id', props.id)
 </script>
 <template>
   <view class="job-fair-details" v-if="jobFairDetails">
@@ -48,7 +48,7 @@
             />
             <cr-icon-light class="mt-20" name="map" :label="jobFairDetails.address" />
           </view>
-          <view class="name-number-list">
+          <view class="name-number-list  mt-20">
             <view class="name-number-item">
               <view class="font-base-grey">参与公司</view>
               <view class="font-base-light mt-10">{{ jobFairDetails.enterpariseCount }}家</view>
@@ -72,7 +72,7 @@
             :avatar="item.logo"
             :name="item.companyFullName"
             :desc="`${item.financingState}${item.staffSize}${item.industryName}`"
-            @click="navigateToCompanyDetails"
+            @click="navigateToCompanyDetails(item)"
             v-for="item in companyList"
           >
             <template #end>
@@ -121,17 +121,6 @@
     .info-list {
       display: flex;
       flex-direction: column;
-    }
-
-    .name-number-list {
-      display: flex;
-      align-items: center;
-      margin-top: 40rpx;
-    }
-
-    .name-number-item {
-      flex: 1;
-      text-align: center;
     }
   }
 

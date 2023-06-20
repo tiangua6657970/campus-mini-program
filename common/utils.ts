@@ -64,3 +64,14 @@ export function formatDateStartByMonth(time: string) {
 
   return `${month}月${date}日 ${hour}:${minute}`
 }
+
+export function toast(title: string, duration = 1500) {
+  uni.showToast({
+    title: title,
+    icon: 'none',
+    duration: duration
+  }).then()
+}
+function test() {
+
+}

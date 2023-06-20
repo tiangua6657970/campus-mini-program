@@ -5,7 +5,7 @@
   import { navigateToJobDetails } from '@/common/navigates'
 
   interface Props {
-    id: number
+    id: string
   }
   const props = defineProps<Props>()
   const currenIndex = ref(0)

@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import { useJobDetails } from '@/service'
-  import { navigateToCompanyDetails } from "@/common/navigates";
+  import { navigateToCompanyDetails } from '@/common/navigates'
 
   interface Props {
-    id: number
+    id: string
   }
 
   const props = defineProps<Props>()
@@ -35,13 +35,13 @@
         >{{ jobDetails.minSalary + '-' + jobDetails.maxSalary + 'k' }}
       </view>
     </view>
-    <cr-company-item :company="jobDetails.enterprise" @click="navigateToCompanyDetails"/>
+    <cr-company-item :company="jobDetails.enterprise" @click="navigateToCompanyDetails" />
     <view class="font-title-light">岗位职责</view>
     <view class="font-paragraph" v-for="item in jobDetails.jobResponsibility.split('；')">{{ item }}</view>
     <view class="font-title-light">任职要求</view>
     <view class="font-paragraph" v-for="item in jobDetails.jobRequirement.split('；')">{{ item }}</view>
     <view class="font-title-light">职位福利</view>
-    <cr-tag-list :list="jobDetails.jobBenefits.split(',')" />
+    <cr-tag-list :list="jobDetails.enterprise.welfare.split(',')" />
     <view style="height: 120rpx"></view>
     <view class="cr-fixed-bottom">
       <u-button class="cr-flex-1" :type="'primary'">我要投简历</u-button>

@@ -1,10 +1,38 @@
 {
   "id": "4121636",
   "name": "campus-recruitment-mini-program",
-  "font_family": "iconfont",
+  "font_family": "cr-icon",
   "css_prefix_text": "cr-icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "3901171",
+      "name": "求职意向",
+      "font_class": "preference",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "4488858",
+      "name": "附件简历",
+      "font_class": "resume-copy",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "12317084",
+      "name": "三方协议",
+      "font_class": "termsOfService",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "22822362",
+      "name": "简历",
+      "font_class": "resume",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
     {
       "icon_id": "167431",
       "name": "datetime",

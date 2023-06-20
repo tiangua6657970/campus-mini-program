@@ -2,14 +2,10 @@ import { get } from '@/service/base'
 import { Ref, ref } from 'vue'
 import { useSearch } from '@/common/hooks/use-search'
 
-
-
-type JobListParams = PagingParams & Id
-
+type JobListParams =  { id?: string; ids?: string; [prop: string]: any }
 
 export const getJobList = (params: JobListParams) => get<Array<Job>>('api/jobList', params)
-
-export const getJobDetail = (params: { id: number }) => get<Job>('api/jodInfo', params)
+export const getJobDetail = (params: Id) => get<Job>('api/jodInfo', params)
 export const getIndexSwiperList = (params?: any) => get<Array<Swiper>>('api/indexSwiperList', params)
 
 export function useIndexSwiperList() {
@@ -31,14 +27,15 @@ async function _getJobList(params: JobListParams) {
   return data
 }
 
-export function useJobList(props: Id) {
-  const jobList = ref<Array<Job>>([])
+export function useJobList() {
+  const jobList = ref<Job[]>([])
   const noData = ref(false)
-  async function refresh() {
-    jobList.value = await _getJobList(props)
+  async function refresh(key: keyof JobListParams, value: string) {
+    jobList.value = await _getJobList({ [key]: value })
     noData.value = !jobList.value.length
   }
-  return {  jobList, refresh, noData}
+
+  return { jobList, refresh, noData }
 }
 
 export function useSearchJobList() {
@@ -52,10 +49,10 @@ export function useSearchJobList() {
     setParamsAndRefresh,
     resetParamsAndRefresh,
     setQueryCallback
-  } =  useSearch(_getJobList)
+  } =  useSearch<Job>(_getJobList)
   return {
     query,
-    loadResult: loadResult as unknown as Ref<Array<Job>>,
+    loadResult,
     loadStatus,
     noData,
     refresh,

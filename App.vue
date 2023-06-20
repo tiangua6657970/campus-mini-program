@@ -16,4 +16,5 @@
 	/*每个页面公共css */
   @import './uni_modules/vk-uview-ui/index.scss';
   @import 'static/iconfont.css';
+  @import "common/style/components.scss";
 </style>

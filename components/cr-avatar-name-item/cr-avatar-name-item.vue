@@ -6,14 +6,14 @@
   }
 
   const props = defineProps<Props>()
+  const emit = defineEmits<{
+    (e: 'click'): void
+  }>()
 </script>
 
 <template>
-  <view class="cr-avatar-name-item ptb-20 u-border-bottom">
-    <u-avatar
-      :size="88"
-      :src="avatar"
-    ></u-avatar>
+  <view class="cr-avatar-name-item ptb-20 u-border-bottom" @click="emit('click')">
+    <u-avatar :size="88" :src="avatar"></u-avatar>
     <view class="cr-avatar-name-item__content">
       <view class="font-title">{{ name }}</view>
       <view class="font-desc mt-10" v-if="desc">{{ desc }}</view>
