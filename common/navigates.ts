@@ -50,22 +50,16 @@ export const pagePaths = {
   interview: '/pages/interview/interview',
   // 面试详情
   interviewDetails: '/pages/interview-details/interview-details',
-  // 我的简历
-  myResume: '/pages/my-resume/my-resume',
   // 简历详情
   resumeDetails: '/pages/resume-details/resume-details',
-  // 新增简历
-  addResume: '/pages/add-resume/add-resume',
-  // 简历新增联系方式
-  resumeAddContactInfo: '/pages/resume-add-contact-info/resume-add-contact-info',
-  // 简历新增个人描述
-  resumeAddPersonalDescription: '/pages/resume-add-personal-description/resume-add-personal-description',
+  // 简历编辑基本信息
+  resumeBaseEdit: '/pages/resume-base-edit/resume-base-edit',
   // 简历新增项目经历
-  resumeAddProjectExperience: '/pages/resume-add-project-experience/resume-add-project-experience',
+  resumeProjectExperienceAdd: '/pages/resume-project-experience-add/resume-project-experience-add',
   // 简历新增工作经历
-  resumeAddWorkExperience: '/pages/resume-add-work-experience/resume-add-work-experience',
+  resumeWorkExperienceAdd: '/pages/resume-work-experience-add/resume-work-experience-add',
   // 简历新增求职意向
-  resumeAddJobPreference: '/pages/resume-add-job-preference/resume-add-job-preference',
+  resumeJobPreferenceAdd: '/pages/resume-job-preference-add/resume-job-preference-add',
   // 设置
   settings: '/pages/settings/settings',
   // 面试邀请详情
@@ -205,36 +199,24 @@ export function navigateToInterviewDetails() {
   navigateTo(pagePaths.interviewDetails)
 }
 
-export function navigateToMyResume() {
-  navigateTo(pagePaths.myResume)
-}
-
 export function navigateToResumeDetails() {
   navigateTo(pagePaths.resumeDetails)
 }
 
-export function navigateToAddResume() {
-  navigateTo(pagePaths.addResume)
+export function navigateResumeBaseEdit() {
+  navigateTo(pagePaths.resumeBaseEdit)
 }
 
-export function navigateToResumeAddContactInfo() {
-  navigateTo(pagePaths.resumeAddContactInfo)
+export function navigateToResumeProjectExperienceAdd(type: 'add'| 'edit' = 'add') {
+  navigateTo(pagePaths.resumeProjectExperienceAdd,{ type })
 }
 
-export function navigateToResumeAddPersonalDescription() {
-  navigateTo(pagePaths.resumeAddPersonalDescription)
+export function navigateToResumeWorkExperienceAdd(type: 'add'| 'edit' = 'add') {
+  navigateTo(pagePaths.resumeWorkExperienceAdd,{ type })
 }
 
-export function navigateToResumeAddProjectExperience() {
-  navigateTo(pagePaths.resumeAddProjectExperience)
-}
-
-export function navigateToResumeAddWorkExperience() {
-  navigateTo(pagePaths.resumeAddWorkExperience)
-}
-
-export function navigateToResumeAddJobPreference() {
-  navigateTo(pagePaths.resumeAddJobPreference)
+export function navigateToResumeJobPreferenceAdd(type: 'add'| 'edit' = 'add') {
+  navigateTo(pagePaths.resumeJobPreferenceAdd, { type })
 }
 
 export function navigateToSettings() {

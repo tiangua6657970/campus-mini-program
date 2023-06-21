@@ -2,11 +2,26 @@
   import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
   import { useIndexSwiperList, useSearchJobList } from '@/service'
   import { navigateTo, navigateToJobDetails, navigateToJobSearch, pagePaths } from '@/common/navigates'
-  import { reactive, ref, watchEffect } from 'vue'
+  import { computed, ref, watchEffect } from 'vue'
+  import locationStore from '@/stores/location'
 
   const addressSelectorShow = ref(false)
+  const addressSelectorParams = {
+    province: true,
+    city: true,
+    area: false
+  }
+  const selectedCity = ref('')
+  const currentCity = computed(() => {
+    if (selectedCity.value) {
+      return selectedCity.value
+    }
+    if (locationStore.currentCity.value) {
+      return locationStore.currentCity.value
+    }
+    return locationStore.positionStatusText.value
+  })
   const currentType = ref('recommend')
-  const showFilterItems = reactive<{ [props: string]: string }>({})
   const { swiperList, refresh: refreshSwiperList } = useIndexSwiperList()
   const {
     query,
@@ -19,10 +34,9 @@
   } = useSearchJobList()
 
   function handleAddressSelectionConfirm(result: any) {
-    const { province, city, area } = result
-    const value = `${province.name}-${city.name}-${area.name}`
-    setParamsAndRefresh('address', value)
-    showFilterItems.region = value
+    const { province, city } = result
+    selectedCity.value = city.name
+    setParamsAndRefresh('address', city.name)
   }
 
   function handleSwiperClick(index: number) {
@@ -37,6 +51,7 @@
     await Promise.all([refreshSwiperList(), refreshJobList()])
     uni.stopPullDownRefresh()
   })
+  locationStore. refresh()
   refreshSwiperList()
   watchEffect(e => {
     setParamsAndRefresh('type', currentType.value)
@@ -83,19 +98,19 @@
               class="mr-20"
               :class="currentType === 'recommend' ? 'font-title-light' : 'font-title-grey'"
               @click="currentType = 'recommend'"
-            >推荐
+              >推荐
             </view>
             <view
               :class="currentType === 'all' ? 'font-title-light' : 'font-title-grey'"
               @click="currentType = 'all'"
-            >全部
+              >全部
             </view>
           </view>
           <view class="list-header-right">
             <u-icon
               name="arrow-down"
               size="30"
-              label="南宁"
+              :label="currentCity"
               label-pos="left"
               @click="addressSelectorShow = true"
             ></u-icon>
@@ -104,7 +119,12 @@
         <cr-job-list :list="loadResult" @item-click="navigateToJobDetails" />
         <u-loadmore :status="loadStatus" v-if="loadResult.length" @loadmore="loadMore" />
         <cr-empty v-if="noData" :top="525" />
-        <u-picker v-model="addressSelectorShow" mode="region" @confirm="handleAddressSelectionConfirm"></u-picker>
+        <u-picker
+          v-model="addressSelectorShow"
+          mode="region"
+          :params="addressSelectorParams"
+          @confirm="handleAddressSelectionConfirm"
+        ></u-picker>
       </view>
     </view>
   </view>

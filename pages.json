@@ -116,39 +116,27 @@
       }
     },
     {
-      "path": "pages/add-resume/add-resume",
+      "path": "pages/resume-base-edit/resume-base-edit",
       "style": {
-        "navigationBarTitleText": "新增简历"
+        "navigationBarTitleText": "简历编辑基本信息"
       }
     },
     {
-      "path": "pages/resume-add-contact-info/resume-add-contact-info",
-      "style": {
-        "navigationBarTitleText": "简历新增联系方式"
-      }
-    },
-    {
-      "path": "pages/resume-add-personal-description/resume-add-personal-description",
-      "style": {
-        "navigationBarTitleText": "简历新增个人描述"
-      }
-    },
-    {
-      "path": "pages/resume-add-project-experience/resume-add-project-experience",
+      "path": "pages/resume-project-experience-add/resume-project-experience-add",
       "style": {
         "navigationBarTitleText": "简历新增项目经历"
       }
     },
     {
-      "path": "pages/resume-add-work-experience/resume-add-work-experience",
+      "path": "pages/resume-work-experience-add/resume-work-experience-add",
       "style": {
         "navigationBarTitleText": "简历新增工作经历"
       }
     },
     {
-      "path": "pages/resume-add-job-preference/resume-add-job-preference",
+      "path": "pages/resume-job-preference-add/resume-job-preference-add",
       "style": {
-        "navigationBarTitleText": "简历新增工作经历"
+        "navigationBarTitleText": "简历新增期望职位"
       }
     },
     {
@@ -173,13 +161,6 @@
       "path": "pages/favorite-jobs/favorite-jobs",
       "style": {
         "navigationBarTitleText": "已收藏职位"
-      }
-    },
-    {
-      "path": "pages/my-resume/my-resume",
-      "style": {
-        "navigationBarTitleText": "我的简历",
-        "enablePullDownRefresh": true
       }
     },
     {

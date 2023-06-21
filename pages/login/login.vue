@@ -6,8 +6,8 @@
   import { toast } from '@/common/utils'
   import { navigateToRoleSelection } from '@/common/navigates'
   import { formRules, placeholders } from '@/common/hooks/use-form'
-  import { _getUserinfo } from "@/service/user-center";
-  import { useUserInfoStore } from "@/stores/user-center";
+  import { _getUserinfo } from '@/service/user-center'
+  import { useUserInfoStore } from '@/stores/user-center'
 
   const currenIndex = ref(0)
   const formRef = ref()
@@ -90,8 +90,13 @@
                 <u-form-item label-width="auto" label="学号" prop="studentCode">
                   <u-input v-model="form.studentCode" clearable :placeholder="placeholders.studentCode" />
                 </u-form-item>
-                <u-form-item label-width="auto"  label="密码" prop="password">
-                  <u-input v-model="form.password" clearable :placeholder="placeholders.password" type="password" />
+                <u-form-item label-width="auto" label="密码" prop="password">
+                  <u-input
+                    v-model="form.password"
+                    clearable
+                    :placeholder="placeholders.password"
+                    type="password"
+                  />
                 </u-form-item>
               </template>
               <template v-if="currenIndex === 1">

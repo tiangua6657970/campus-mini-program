@@ -35,8 +35,11 @@ export const historyStore = reactive<HistoryStoreType>({
         if (this.list.length > MAX_COUNT) {
           this.list.pop()
         }
-        this.saveToLocal()
+      } else {
+        this.list.splice(index,1)
+        this.list.unshift(item)
       }
+      this.saveToLocal()
     }
   },
   remove(item) {

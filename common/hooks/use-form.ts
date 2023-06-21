@@ -101,6 +101,14 @@ export const formRules = {
       required: true,
       message: placeholders.id,
       trigger: ['blur']
+    },
+    {
+      required: true,
+      validator: (rule: any, value: any) => {
+        return formRulesTest.idCard(value)
+      },
+      message: '请输入合法的身份证号',
+      trigger: ['blur']
     }
   ],
   idCardCopy: [

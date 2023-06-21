@@ -5,7 +5,8 @@
     navigateToInterview,
     navigateToPrivacyAndSecurity,
     navigateToSettings,
-    navigateToTermsOfService
+    navigateToTermsOfService,
+    navigateToResumeDetails
   } from '@/common/navigates'
   import { useUserInfoStore } from '@/stores/user-center'
 
@@ -45,7 +46,7 @@
       </view>
       <view style="margin-top: 580rpx">
         <view class="action-list plr-30 bg-white" style="margin-top: 580rpx">
-          <view class="action-item ptb-20 u-border-bottom">
+          <view class="action-item ptb-20 u-border-bottom" @click="navigateToResumeDetails">
             <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-resume" label="在线简历"></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
@@ -100,7 +101,7 @@
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
           <view class="action-item ptb-20 u-border-bottom" @click="navigateToSettings">
-            <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-edit" label="设置"></u-icon>
+            <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-setting" label="设置"></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
         </view>

@@ -35,7 +35,11 @@ $cr-font-color-price: #ff5200;
   color: $cr-font-color-grey;
   font-weight: bold;
 }
-
+.font-sub-title {
+  font-size: $cr-font-size-base;
+  color: $cr-font-color-base;
+  font-weight: bold;
+}
 .font-desc {
   font-size: $cr-font-size-sm;
   color: $cr-font-color-grey;
@@ -131,7 +135,10 @@ $cr-font-color-price: #ff5200;
 .mt-20 {
   margin-top: 20rpx;
 }
-
+.mtb-20 {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
 .mr-20 {
   margin-right: 20rpx;
 }
@@ -155,6 +162,11 @@ $cr-font-color-price: #ff5200;
 @mixin center-wrap() {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+}
+@mixin between-center() {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 

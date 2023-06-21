@@ -40,7 +40,7 @@
   content: '\e600';
 }
 
-.cr-icon-edit:before {
+.cr-icon-setting:before {
   content: '\e621';
 }
 
@@ -52,7 +52,7 @@
   content: '\e61a';
 }
 
-.cr-icon-bianji:before {
+.cr-icon-edit:before {
   content: '\e67f';
 }
 
