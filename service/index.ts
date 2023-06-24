@@ -30,8 +30,8 @@ async function _getJobList(params: JobListParams) {
 export function useJobList() {
   const jobList = ref<Job[]>([])
   const noData = ref(false)
-  async function refresh(key: keyof JobListParams, value: string) {
-    jobList.value = await _getJobList({ [key]: value })
+  async function refresh(params: JobListParams = {}) {
+    jobList.value = await _getJobList(params)
     noData.value = !jobList.value.length
   }
 

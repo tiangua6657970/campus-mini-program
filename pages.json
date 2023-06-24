@@ -116,27 +116,48 @@
       }
     },
     {
+      "path": "pages/resume-edit/resume-edit",
+      "style": {
+        "navigationBarTitleText": "简历编辑",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
       "path": "pages/resume-base-edit/resume-base-edit",
       "style": {
-        "navigationBarTitleText": "简历编辑基本信息"
+        "navigationBarTitleText": "基本信息"
       }
     },
     {
-      "path": "pages/resume-project-experience-add/resume-project-experience-add",
+      "path": "pages/resume-project-experience/resume-project-experience",
       "style": {
-        "navigationBarTitleText": "简历新增项目经历"
+        "navigationBarTitleText": "项目经历"
       }
     },
     {
-      "path": "pages/resume-work-experience-add/resume-work-experience-add",
+      "path": "pages/resume-work-experience/resume-work-experience",
       "style": {
-        "navigationBarTitleText": "简历新增工作经历"
+        "navigationBarTitleText": "工作经历"
       }
     },
     {
-      "path": "pages/resume-job-preference-add/resume-job-preference-add",
+      "path": "pages/resume-job-preference/resume-job-preference",
       "style": {
-        "navigationBarTitleText": "简历新增期望职位"
+        "navigationBarTitleText": "期望职位"
+      }
+    },
+    {
+      "path": "pages/resume-self-rating/resume-self-rating",
+      "style": {
+        "navigationBarTitleText": "自我评价",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/resume-skills/resume-skills",
+      "style": {
+        "navigationBarTitleText": "更多技能",
+        "enablePullDownRefresh": true
       }
     },
     {

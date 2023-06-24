@@ -28,7 +28,7 @@
         :background="{ background: 'transparent' }"
       ></u-navbar>
       <view class="container">
-        <view style="height: 360rpx"></view>
+        <u-image class="u-image" src="@/static/images/job-fair-details-bg.png" height="360" />
         <view class="container__block p-30 bg-white">
           <view class="font-title">{{ companyDetails.companyShortName }}</view>
           <view class="font-desc mt-20">{{ companyDetails.industryName }} | {{ companyDetails.staffSize }}人</view>
@@ -69,6 +69,7 @@
               :show-company="false"
               @click="navigateToJobDetails"
               v-for="item in jobList"
+              :key="item.id"
             />
             <cr-empty v-if="noData" :top="360" />
           </template>
@@ -82,9 +83,6 @@
   .company-details {
     .container {
       position: absolute;
-      background-image: url('static/images/common-bg.png');
-      background-repeat: no-repeat;
-      background-size: 100%;
       top: 0;
       right: 0;
       bottom: 0;

@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useSearch } from '@/common/hooks/use-search'
 
 export const getJobFairList = (params?: PagingParams) => get<JobFair[]>('app/jobFairs/dc/list', params)
-export const getEmployerTalkList = (params?: PagingParams) => get<EmployerTalk[]>('app/jobFairs/sm/list', params)
+export const getEmployerTalkList = (params?: PagingParams) => get<EmployerTalk[]>('/app/jobFairs/sm/list', params)
 export const getJobFairDetails = (params: Id) => get<JobFair>('api/jobFairDetail', params)
 export const getEmployerTalkDetails = (params?: PagingParams) =>
   get<EmployerTalk>('api/employerTalkDetails', params)

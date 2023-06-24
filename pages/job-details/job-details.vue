@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { useJobDetails } from '@/service'
   import { navigateToCompanyDetails } from '@/common/navigates'
+  import { favoriteStore } from '@/stores/favorite'
 
   interface Props {
     id: string
@@ -37,9 +38,9 @@
     </view>
     <cr-company-item :company="jobDetails.enterprise" @click="navigateToCompanyDetails" />
     <view class="font-title-light">岗位职责</view>
-    <view class="font-paragraph" v-for="item in jobDetails.jobResponsibility.split('；')">{{ item }}</view>
+    <view class="font-paragraph" v-for="item in jobDetails.jobResponsibility.split('；')" :key="item">{{ item }}</view>
     <view class="font-title-light">任职要求</view>
-    <view class="font-paragraph" v-for="item in jobDetails.jobRequirement.split('；')">{{ item }}</view>
+    <view class="font-paragraph" v-for="item in jobDetails.jobRequirement.split('；')" :key="item">{{ item }}</view>
     <view class="font-title-light">职位福利</view>
     <cr-tag-list :list="jobDetails.enterprise.welfare.split(',')" />
     <view style="height: 120rpx"></view>
@@ -55,16 +56,7 @@
           @click="$emit('share')"
         />
       </u-button>
-      <u-button class="ml-10">
-        <u-icon
-          name="star"
-          :size="30"
-          color="#2b85e4"
-          label="收藏"
-          label-color="#2b85e4"
-          @click="$emit('contact')"
-        />
-      </u-button>
+      <cr-favorite class="ml-10" :id="id"></cr-favorite>
     </view>
   </view>
 </template>

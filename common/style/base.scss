@@ -158,6 +158,9 @@ $cr-font-color-price: #ff5200;
 .mt-10 {
   margin-top: 10rpx;
 }
+.mt-50 {
+  margin-top: 50rpx;
+}
 
 @mixin center-wrap() {
   display: flex;
@@ -184,6 +187,14 @@ $cr-font-color-price: #ff5200;
   display: flex;
   align-items: center;
 }
+
+.cr-button-fixed-bottom {
+  position: fixed !important;
+  left: 96rpx;
+  right: 96rpx;
+  bottom: 96rpx;
+}
+
 .margin-fixed-bottom {
   margin-bottom: 120rpx;
 }

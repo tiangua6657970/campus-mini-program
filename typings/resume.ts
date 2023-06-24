@@ -15,31 +15,31 @@ interface ExpectedJob {
   /**
    * 到岗时间
    */
-  arrivalDate?: string
+  arrivalDate: string
   /**
    * 创建时间
    */
-  createTime?: Date
+  createTime: Date
   /**
    * 期望城市
    */
-  expectedCity?: string
+  expectedCity: string
   /**
    * 期望行业
    */
-  expectedIndustryName?: string
+  expectedIndustryName: string
   /**
    * 期望岗位
    */
-  expectedPosition?: string
+  expectedPosition: string
   /**
    * 期望省份
    */
-  expectedProvince?: string
+  expectedProvince: string
   /**
    * 期望薪资
    */
-  expectedSalary?: string
+  expectedSalary: string
   /**
    * ID
    */
@@ -47,15 +47,15 @@ interface ExpectedJob {
   /**
    * 学生ID
    */
-  studentId?: number
+  studentId: number
   /**
    * 更新时间
    */
-  updateTime?: Date
+  updateTime: Date
   /**
    * 工作类型
    */
-  workType?: string
+  workType: string
 }
 
 /**
@@ -65,47 +65,47 @@ interface ResumeProjectExperience {
   /**
    * 创建时间
    */
-  createTime?: Date
+  createTime?: string;
   /**
    * 结束时间
    */
-  endDate?: Date
+  endDate: string;
   /**
    * ID
    */
-  id: number
+  id: number;
   /**
    * 岗位名称
    */
-  positionName?: string
+  positionName: string;
   /**
    * 项目介绍
    */
-  projectContent?: string
+  projectContent: string;
   /**
    * 项目链接
    */
-  projectLink?: string
+  projectLink: string;
   /**
    * 项目名称
    */
-  projectName?: string
+  projectName: string;
   /**
    * 职责描述
    */
-  responsibilities?: string
+  responsibilities: string;
   /**
    * 简历ID
    */
-  resumeId?: number
+  resumeId: number;
   /**
    * 开始时间
    */
-  startDate?: Date
+  startDate: string;
   /**
    * 更新时间
    */
-  updateTime?: Date
+  updateTime?: string;
 }
 
 /**
@@ -220,15 +220,15 @@ interface ResumeWorkExperience {
   /**
    * 公司名称
    */
-  companyName?: string
+  companyName: string
   /**
    * 创建时间
    */
-  createTime?: Date
+  createTime: string
   /**
    * 离职时间
    */
-  endDate?: Date
+  endDate: string
   /**
    * ID
    */
@@ -236,7 +236,7 @@ interface ResumeWorkExperience {
   /**
    * 行业名称
    */
-  industryName?: string
+  industryName: string
   /**
    * 岗位ID
    */
@@ -244,7 +244,7 @@ interface ResumeWorkExperience {
   /**
    * 岗位名称
    */
-  positionName?: string
+  positionName: string
   /**
    * 简历ID
    */
@@ -252,17 +252,17 @@ interface ResumeWorkExperience {
   /**
    * 入职时间
    */
-  startDate?: Date
+  startDate: string
   /**
    * 更新时间
    */
-  updateTime?: Date
+  updateTime: string
   /**
    * 工作内容
    */
-  workContent?: string
+  workContent: string
   /**
    * 工作业绩
    */
-  workPerformance?: string
+  workPerformance: string
 }

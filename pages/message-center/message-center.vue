@@ -14,7 +14,7 @@
 <template>
   <view class="message-center">
     <view class="p-30">
-      <cr-avatar-name-item :avatar="item.logo" :name="item.title" :desc="item.content" v-for="item in messageList">
+      <cr-avatar-name-item :avatar="item.logo" :name="item.title" :desc="item.content" v-for="item in messageList" :key="item.id">
         <template #end>
           <view class="datetime font-desc">{{ formatDateStartByMonth(item.datetime) }}</view>
         </template>

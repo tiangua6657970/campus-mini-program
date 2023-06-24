@@ -162,7 +162,7 @@
                 <u-input v-model="form.content" clearable placeholder="请输入企业简介" type="textarea" />
               </u-form-item>
             </template>
-            <u-button class="u-margin-top-50" type="primary" @click="save">完成</u-button>
+            <u-button class="mt-50" type="primary" @click="save">完成</u-button>
           </u-form>
         </view>
       </view>
@@ -187,7 +187,7 @@
       transform: translate(-50%, -50%);
       padding: 30rpx;
 
-      .content{
+      .content {
         background-color: #fff;
         border-radius: 15rpx;
         padding: 30rpx;

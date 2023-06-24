@@ -52,14 +52,19 @@ export const pagePaths = {
   interviewDetails: '/pages/interview-details/interview-details',
   // 简历详情
   resumeDetails: '/pages/resume-details/resume-details',
+  resumeEdit: '/pages/resume-edit/resume-edit',
   // 简历编辑基本信息
   resumeBaseEdit: '/pages/resume-base-edit/resume-base-edit',
   // 简历新增项目经历
-  resumeProjectExperienceAdd: '/pages/resume-project-experience-add/resume-project-experience-add',
+  resumeProjectExperience: '/pages/resume-project-experience/resume-project-experience',
   // 简历新增工作经历
-  resumeWorkExperienceAdd: '/pages/resume-work-experience-add/resume-work-experience-add',
+  resumeWorkExperience: '/pages/resume-work-experience/resume-work-experience',
   // 简历新增求职意向
-  resumeJobPreferenceAdd: '/pages/resume-job-preference-add/resume-job-preference-add',
+  resumeJobPreference: '/pages/resume-job-preference/resume-job-preference',
+  // 简历自我评价
+  resumeSelfRating: '/pages/resume-self-rating/resume-self-rating',
+  // 更多技能
+  resumeSkills: '/pages/resume-skills/resume-skills',
   // 设置
   settings: '/pages/settings/settings',
   // 面试邀请详情
@@ -202,21 +207,30 @@ export function navigateToInterviewDetails() {
 export function navigateToResumeDetails() {
   navigateTo(pagePaths.resumeDetails)
 }
+export function navigateToResumeEdit() {
+  navigateTo(pagePaths.resumeEdit)
+}
 
 export function navigateResumeBaseEdit() {
   navigateTo(pagePaths.resumeBaseEdit)
 }
 
 export function navigateToResumeProjectExperienceAdd(type: 'add'| 'edit' = 'add') {
-  navigateTo(pagePaths.resumeProjectExperienceAdd,{ type })
+  navigateTo(pagePaths.resumeProjectExperience,{ type })
 }
 
 export function navigateToResumeWorkExperienceAdd(type: 'add'| 'edit' = 'add') {
-  navigateTo(pagePaths.resumeWorkExperienceAdd,{ type })
+  navigateTo(pagePaths.resumeWorkExperience,{ type })
 }
 
 export function navigateToResumeJobPreferenceAdd(type: 'add'| 'edit' = 'add') {
-  navigateTo(pagePaths.resumeJobPreferenceAdd, { type })
+  navigateTo(pagePaths.resumeJobPreference, { type })
+}
+export function navigateToResumeSelfRating() {
+  navigateTo(pagePaths.resumeSelfRating)
+}
+export function navigateToResumeSkills() {
+  navigateTo(pagePaths.resumeSkills)
 }
 
 export function navigateToSettings() {

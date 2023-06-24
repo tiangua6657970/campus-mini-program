@@ -1,16 +1,16 @@
+<script setup lang="ts">
+import { useJobList } from "@/service";
+import { navigateToJobDetails } from "@/common/navigates";
+
+const { jobList, noData, refresh } = useJobList()
+refresh()
+
+</script>
 <template>
-  <view>
-    已收藏职位
+  <view class="favorite-jobs p-30">
+    <cr-job-list :list="jobList" @item-click="navigateToJobDetails" />
   </view>
 </template>
-
-<script>
-export default {
-  data() {
-    return {};
-  }
-};
-</script>
 
 <style lang="scss">
 

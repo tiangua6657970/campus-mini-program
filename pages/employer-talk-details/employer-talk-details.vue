@@ -12,7 +12,7 @@
   const tabs = [{ name: '活动详情' }, { name: '职位招聘' }]
 
   function handleTabChange(index: number) {
-    refreshJobList('ids', employerTalkDetails.value!.jobIds)
+    refreshJobList({ ids: employerTalkDetails.value!.jobIds })
   }
   refresh()
 </script>

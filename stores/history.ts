@@ -6,7 +6,7 @@ interface HistoryStoreType {
   add: (item: string) => void
   remove: (item: string) => void
   clear: () => void
-  saveToLocal: () => void
+  _saveToLocal: () => void
 }
 
 const MAX_COUNT = 8
@@ -39,21 +39,21 @@ export const historyStore = reactive<HistoryStoreType>({
         this.list.splice(index,1)
         this.list.unshift(item)
       }
-      this.saveToLocal()
+      this._saveToLocal()
     }
   },
   remove(item) {
     const index = this.list.findIndex(_ => _ === item)
     if (index !== -1) {
       this.list.splice(index, 1)
-      this.saveToLocal()
+      this._saveToLocal()
     }
   },
   clear() {
     this.list = []
-    this.saveToLocal()
+    this._saveToLocal()
   },
-  saveToLocal() {
+  _saveToLocal() {
     uni.setStorageSync(__HISTORY__, this.list)
   }
 })

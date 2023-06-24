@@ -38,7 +38,7 @@ interface Job {
   /**
    * ID
    */
-  id: number
+  id: string
   /**
    * 任职要求
    */

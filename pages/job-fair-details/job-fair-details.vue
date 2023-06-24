@@ -19,7 +19,7 @@
   const { jobList, refresh: refreshJobList, noData: jobNoData } = useJobList()
   refresh()
   refreshCompanyList()
-  refreshJobList('id', props.id)
+  refreshJobList({ id: props.id })
 </script>
 <template>
   <view class="job-fair-details" v-if="jobFairDetails">
@@ -48,7 +48,7 @@
             />
             <cr-icon-light class="mt-20" name="map" :label="jobFairDetails.address" />
           </view>
-          <view class="name-number-list  mt-20">
+          <view class="name-number-list mt-20">
             <view class="name-number-item">
               <view class="font-base-grey">参与公司</view>
               <view class="font-base-light mt-10">{{ jobFairDetails.enterpariseCount }}家</view>
@@ -74,6 +74,7 @@
             :desc="`${item.financingState}${item.staffSize}${item.industryName}`"
             @click="navigateToCompanyDetails(item)"
             v-for="item in companyList"
+            :key="item.id"
           >
             <template #end>
               <view class="job-fair-position">

@@ -170,6 +170,16 @@ export const formRules = {
   ]
 }
 
+export function getRuleByMessage<S extends string>(...messages: S[]) {
+  return messages.map(msg => {
+    return  {
+      required: true,
+      message: msg,
+      trigger: ['blur']
+    }
+  })
+}
+
 type FormFields = Record<string, any>
 type FormValues<T extends FormFields> = {
   [K in keyof T]: any

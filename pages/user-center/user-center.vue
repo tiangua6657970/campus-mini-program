@@ -1,12 +1,13 @@
 <script setup lang="ts">
   import {
     navigateToAppliedResume,
+    navigateToFavoriteJobs,
     navigateToFeedback,
     navigateToInterview,
     navigateToPrivacyAndSecurity,
+    navigateToResumeEdit,
     navigateToSettings,
-    navigateToTermsOfService,
-    navigateToResumeDetails
+    navigateToTermsOfService
   } from '@/common/navigates'
   import { useUserInfoStore } from '@/stores/user-center'
 
@@ -37,7 +38,7 @@
               <view class="font-base-grey">已面试</view>
               <view class="font-base-light mt-10">123</view>
             </view>
-            <view class="name-number-item" @click="navigateToInterview">
+            <view class="name-number-item" @click="navigateToFavoriteJobs">
               <view class="font-base-grey">收藏职位</view>
               <view class="font-base-light mt-10">123</view>
             </view>
@@ -46,7 +47,7 @@
       </view>
       <view style="margin-top: 580rpx">
         <view class="action-list plr-30 bg-white" style="margin-top: 580rpx">
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToResumeDetails">
+          <view class="action-item ptb-20 u-border-bottom" @click="navigateToResumeEdit">
             <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-resume" label="在线简历"></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>

@@ -26,7 +26,9 @@ export function deepMerge(...objs: any[]): any {
   })
   return result
 }
+
 let timeout: number | null | undefined = null
+
 export function debounce(func: Function, wait = 500, immediate = false) {
   // 清除定时器
   if (timeout !== null) clearTimeout(timeout)
@@ -65,13 +67,23 @@ export function formatDateStartByMonth(time: string) {
   return `${month}月${date}日 ${hour}:${minute}`
 }
 
-export function toast(title: string, duration = 1500) {
-  uni.showToast({
-    title: title,
-    icon: 'none',
-    duration: duration
-  }).then()
+export function getCurrentTime() {
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = (now.getMonth() + 1).toString().padStart(2, '0')
+  const day = now.getDate().toString().padStart(2, '0')
+  const hour = now.getHours().toString().padStart(2, '0')
+  const minute = now.getMinutes().toString().padStart(2, '0')
+  const second = now.getSeconds().toString().padStart(2, '0')
+  return `${year}-${month}-${day} ${hour}:${minute}`
 }
-function test() {
 
+export function toast(title: string, duration = 1500) {
+  uni
+    .showToast({
+      title: title,
+      icon: 'none',
+      duration: duration
+    })
+    .then()
 }

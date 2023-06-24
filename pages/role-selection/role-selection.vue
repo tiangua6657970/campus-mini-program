@@ -13,8 +13,12 @@
       <u-image src="@/static/images/auth-bg.png" width="100%" height="100%" />
       <view class="content">
         <u-image class="u-image" src="@/static/images/role-selection.png" width="490" height="396" />
-        <u-button class="u-margin-top-50" type="primary" @click="navigateToVerification('学生验证')">我要找工作</u-button>
-        <u-button class="u-margin-top-50" type="primary" @click="navigateToVerification('企业验证')">我要招人</u-button>
+        <view class="mt-50">
+          <u-button type="primary" @click="navigateToVerification('学生验证')">我要找工作</u-button>
+        </view>
+        <view class="mt-50">
+          <u-button type="primary" @click="navigateToVerification('企业验证')">我要招人</u-button>
+        </view>
       </view>
     </view>
   </view>

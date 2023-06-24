@@ -110,7 +110,7 @@
                   </template>
                 </u-form-item>
               </template>
-              <u-button class="u-margin-top-50" type="primary" @click="save">登录</u-button>
+              <u-button class="mt-50" type="primary" @click="save">登录</u-button>
             </u-form>
           </view>
         </view>

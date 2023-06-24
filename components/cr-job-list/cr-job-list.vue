@@ -12,6 +12,7 @@
     <cr-job-list-item
       :data="item"
       v-for="item in list"
+      :key="item.id"
       @click="emit('itemClick', item)"
     />
   </view>
