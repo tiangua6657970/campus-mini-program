@@ -32,34 +32,36 @@
     ></u-navbar>
     <view class="container">
       <u-image class="u-image" src="@/static/images/job-fair-details-bg.png" height="700" />
-      <view class="content p-30">
-        <view class="block p-20 bg-white">
-          <view class="font-title">{{ jobFairDetails.title }}</view>
-          <view class="info-list">
-            <cr-icon-light
-              class="mt-20"
-              name="cr-icon-datetime"
-              :label="`时间：${calculateNewTime(jobFairDetails.startTime, jobFairDetails.endTime)}`"
-            />
-            <cr-icon-light
-              class="mt-20"
-              name="cr-icon-phone"
-              :label="`${jobFairDetails.director} ${jobFairDetails.tel}`"
-            />
-            <cr-icon-light class="mt-20" name="map" :label="jobFairDetails.address" />
-          </view>
-          <view class="name-number-list mt-20">
-            <view class="name-number-item">
-              <view class="font-base-grey">参与公司</view>
-              <view class="font-base-light mt-10">{{ jobFairDetails.enterpariseCount }}家</view>
+      <view class="content">
+        <view class="p-30">
+          <view class="block p-20 bg-white">
+            <view class="font-title">{{ jobFairDetails.title }}</view>
+            <view class="info-list">
+              <cr-icon-light
+                class="mt-20"
+                name="cr-icon-datetime"
+                :label="`时间：${calculateNewTime(jobFairDetails.startTime, jobFairDetails.endTime)}`"
+              />
+              <cr-icon-light
+                class="mt-20"
+                name="cr-icon-phone"
+                :label="`${jobFairDetails.director} ${jobFairDetails.tel}`"
+              />
+              <cr-icon-light class="mt-20" name="map" :label="jobFairDetails.address" />
             </view>
-            <view class="name-number-item">
-              <view class="font-base-grey">招聘职位</view>
-              <view class="font-base-light mt-10">{{ jobFairDetails.jobCount }}个</view>
-            </view>
-            <view class="name-number-item">
-              <view class="font-base-grey">参与学生人数</view>
-              <view class="font-base-light mt-10">{{ jobFairDetails.studentCount }}人</view>
+            <view class="name-number-list mt-20">
+              <view class="name-number-item">
+                <view class="font-base-grey">参与公司</view>
+                <view class="font-base-light mt-10">{{ jobFairDetails.enterpariseCount }}家</view>
+              </view>
+              <view class="name-number-item">
+                <view class="font-base-grey">招聘职位</view>
+                <view class="font-base-light mt-10">{{ jobFairDetails.jobCount }}个</view>
+              </view>
+              <view class="name-number-item">
+                <view class="font-base-grey">参与学生人数</view>
+                <view class="font-base-light mt-10">{{ jobFairDetails.studentCount }}人</view>
+              </view>
             </view>
           </view>
         </view>
@@ -69,6 +71,7 @@
         </view>
         <template v-if="currenIndex === 0">
           <cr-avatar-name-item
+            class="plr-30 ptb-20 mb-20"
             :avatar="item.logo"
             :name="item.companyFullName"
             :desc="`${item.financingState}${item.staffSize}${item.industryName}`"
@@ -133,5 +136,10 @@
     .u-tabs {
       width: 50%;
     }
+  }
+</style>
+<style>
+  page {
+    background-color: #f3f8ff;
   }
 </style>

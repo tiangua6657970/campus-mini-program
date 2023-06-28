@@ -55,11 +55,9 @@
         <cr-tag-list :list="historyStore.list" @item-click="item => (query = item)" />
       </view>
     </template>
-    <view class="p-30 bg-white">
-      <cr-job-list :list="loadResult" @item-click="navigateToJobDetails" v-if="loadResult.length" />
-      <u-loadmore :status="loadStatus" v-if="loadResult.length" @loadmore="loadMore" />
-      <cr-empty v-if="noData" />
-    </view>
+    <cr-job-list :list="loadResult" @item-click="navigateToJobDetails" v-if="loadResult.length" />
+    <u-loadmore :status="loadStatus" v-if="loadResult.length" @loadmore="loadMore" />
+    <cr-empty v-if="noData" />
     <u-picker v-model="addressSelectorShow" mode="region" @confirm="handleAddressSelectionConfirm"></u-picker>
   </view>
 </template>

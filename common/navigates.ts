@@ -1,4 +1,5 @@
 import { __TOKEN__ } from '@/common/keys'
+import Interview from "@/pages/interview/interview.vue";
 
 export function joinUrl(path: string, params: any = {}) {
   const isString = typeof params === 'string'
@@ -200,8 +201,8 @@ export function navigateToInterview() {
   navigateTo(pagePaths.interview)
 }
 
-export function navigateToInterviewDetails() {
-  navigateTo(pagePaths.interviewDetails)
+export function navigateToInterviewDetails(item: Interview) {
+  navigateTo(pagePaths.interviewDetails, { id: item.id })
 }
 
 export function navigateToResumeDetails() {

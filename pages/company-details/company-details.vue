@@ -34,30 +34,32 @@
           <view class="font-desc mt-20">{{ companyDetails.industryName }} | {{ companyDetails.staffSize }}人</view>
           <cr-tag-list class="mt-20" :list="companyDetails.welfare.split(',')" v-if="companyDetails.welfare" />
         </view>
-        <view class="container__block p-30 bg-white mt-20">
+        <view class="container__block mt-20">
           <u-tabs
             :list="[{ name: '公司简介' }, { name: '招聘职位' }]"
             :is-scroll="false"
             v-model="currenIndex"
           ></u-tabs>
           <template v-if="currenIndex === 0">
-            <view class="font-paragraph mt-20">
-              {{ companyDetails.content }}
-            </view>
-            <view class="font-title mt-20">公司地址</view>
-            <view class="font-paragraph mt-20">{{ companyDetails.address }}</view>
-            <view class="font-title mt-20">联系方式</view>
-            <view class="info-list mt-20">
-              <view class="info-item mb-20">
-                <u-icon name="account" size="30" color="#2b85e4" :label="companyDetails.enterpriseContact" />
-                <u-icon name="cr-icon-navigation" size="40" color="#2b85e4" bold />
+            <view class="p-30 bg-white">
+              <view class="font-paragraph mt-20">
+                {{ companyDetails.content }}
               </view>
-              <view class="info-item mb-20">
-                <u-icon name="cr-icon-phone" size="30" color="#2b85e4" :label="companyDetails.enterpriseTel" />
-                <u-icon name="cr-icon-phone" size="40" color="#2b85e4" bold />
-              </view>
-              <view class="info-item">
-                <u-icon name="email" size="30" color="#2b85e4" :label="companyDetails.enterpriseEmail" />
+              <view class="font-title mt-20">公司地址</view>
+              <view class="font-paragraph mt-20">{{ companyDetails.address }}</view>
+              <view class="font-title mt-20">联系方式</view>
+              <view class="info-list mt-20">
+                <view class="info-item mb-20">
+                  <u-icon name="account" size="30" color="#2b85e4" :label="companyDetails.enterpriseContact" />
+                  <u-icon name="cr-icon-navigation" size="40" color="#2b85e4" bold />
+                </view>
+                <view class="info-item mb-20">
+                  <u-icon name="cr-icon-phone" size="30" color="#2b85e4" :label="companyDetails.enterpriseTel" />
+                  <u-icon name="cr-icon-phone" size="40" color="#2b85e4" bold />
+                </view>
+                <view class="info-item">
+                  <u-icon name="email" size="30" color="#2b85e4" :label="companyDetails.enterpriseEmail" />
+                </view>
               </view>
             </view>
           </template>
@@ -90,9 +92,7 @@
       width: 100%;
     }
     .info-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include between-center()
     }
   }
 </style>

@@ -37,7 +37,7 @@
         </template>
       </cr-avatar-name-item>
     </view>
-    <view class="block p-30 bg-white mt-20">
+    <view class="block mt-20">
       <u-tabs
         class="u-tabs"
         :list="tabs"
@@ -46,12 +46,14 @@
         @change="handleTabChange"
       ></u-tabs>
       <template v-if="currenIndex === 0">
-        <view class="font-title mt-20">报名时间</view>
-        <view class="font-desc-light mt-10"
+        <view class="p-30 bg-white">
+          <view class="font-title mt-20">报名时间</view>
+          <view class="font-desc-light mt-10"
           >{{ employerTalkDetails.applyStartTime }} - {{ employerTalkDetails.applyEndTime }}</view
-        >
-        <view class="font-title mt-20">岗位介绍</view>
-        <view class="font-paragraph mt-10">{{ employerTalkDetails.content }}</view>
+          >
+          <view class="font-title mt-20">岗位介绍</view>
+          <view class="font-paragraph mt-10">{{ employerTalkDetails.content }}</view>
+        </view>
       </template>
       <template v-if="currenIndex === 1">
         <cr-job-list :list="jobList" />

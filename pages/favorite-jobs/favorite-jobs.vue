@@ -7,11 +7,16 @@ refresh()
 
 </script>
 <template>
-  <view class="favorite-jobs p-30">
+  <view class="favorite-jobs">
     <cr-job-list :list="jobList" @item-click="navigateToJobDetails" />
   </view>
 </template>
 
 <style lang="scss">
 
+</style>
+<style>
+page {
+  background-color: #f3f8ff;
+}
 </style>

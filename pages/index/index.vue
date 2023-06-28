@@ -88,11 +88,10 @@
         name="pic"
         indicatorMode="dot"
         circular
-        effect3d
         @click="handleSwiperClick"
       />
-      <view class="p-30">
-        <view class="list-header">
+      <view>
+        <view class="list-header pt-30 plr-30">
           <view class="list-header-left">
             <view
               class="mr-20"
@@ -187,4 +186,9 @@
       align-items: center;
     }
   }
+</style>
+<style>
+page {
+  background-color: #f3f8ff;
+}
 </style>

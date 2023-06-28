@@ -6,9 +6,14 @@
   refresh()
 </script>
 <template>
-  <view class="applied-resume p-30">
+  <view class="applied-resume">
     <cr-job-list :list="jobList" @item-click="navigateToJobDetails" />
   </view>
 </template>
 
 <style lang="scss"></style>
+<style>
+page {
+  background-color: #f3f8ff;
+}
+</style>

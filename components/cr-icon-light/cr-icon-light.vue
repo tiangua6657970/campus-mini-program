@@ -1,7 +1,8 @@
 <script setup lang="ts">
   interface Props {
     name: string
-    label?: string
+    label?: string,
+    bold?: boolean
   }
   defineProps<Props>()
   const emit = defineEmits<{
@@ -10,7 +11,7 @@
 </script>
 
 <template>
-  <u-icon :name="name" size="30" label-size="24" color="#2b85e4" :label="label" @click="emit('click')" />
+  <u-icon :name="name" size="30" label-size="24" color="#2b85e4" :label="label" :bold="bold!" @click="emit('click')" />
 </template>
 
 <style scoped lang="scss"></style>
