@@ -4,10 +4,10 @@
   import { reactive, ref } from 'vue'
   import { useCode } from '@/common/hooks/use-code'
   import { toast } from '@/common/utils'
-  import { navigateToRoleSelection } from '@/common/navigates'
+  import { navigateToRoleSelection, relaunchToIndex } from "@/common/navigates";
   import { formRules, placeholders } from '@/common/hooks/use-form'
   import { _getUserinfo } from '@/service/user-center'
-  import { useUserInfoStore } from '@/stores/user-center'
+  import { useUserinfoStore } from '@/stores/user-center'
 
   const currenIndex = ref(0)
   const formRef = ref()
@@ -60,8 +60,9 @@
         }
         console.log(form, 'form')
         const data = await _getUserinfo()
-        useUserInfoStore.update(data)
-        navigateToRoleSelection()
+        useUserinfoStore.update(data)
+        relaunchToIndex()
+        // navigateToRoleSelection()
       }
     })
   }

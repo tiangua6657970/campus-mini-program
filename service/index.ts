@@ -69,8 +69,9 @@ export function useJobDetails(props: Id) {
     const { data } = await getJobDetail(props)
     return data
   }
-  async function refresh() {
+  async function refresh(callback?: (job: Job) => void) {
     jobDetails.value = await _getJobDetail()
+    callback && callback(jobDetails.value)
   }
   return { jobDetails, refresh}
 }

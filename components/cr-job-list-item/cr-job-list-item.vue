@@ -25,7 +25,7 @@ interface Props {
       <u-avatar class="aa-has-avatar-content-item__avatar mr-20" :size="44" :src="data.enterprise.logo"></u-avatar>
       <view class="cr-avatar-name-item__title font-base">{{ data.enterprise.companyFullName }}</view>
     </view>
-    <view class="job-list-item__money font-money"> {{ data.minSalary + '-' + data.maxSalary + 'k' }}</view>
+    <view class="job-list-item__money font-money"> {{ data.salaryRange }}</view>
   </view>
 </template>
 

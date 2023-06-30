@@ -87,3 +87,21 @@ export function toast(title: string, duration = 1500) {
     })
     .then()
 }
+
+export function generateSalaryOptions(count: number = 30) {
+  count += 1
+  const result = []
+  for (let i = 1; i < count; i++) {
+    const label = i + 'k'
+    const value = i + 'k'
+    const children: any[] = []
+    for (let j = i + 1; j < count; j++) {
+      const label = j + 'k'
+      const value = j + 'k'
+      children.push({ label, value })
+    }
+    result.push({ label, value, children })
+  }
+  result[result.length - 1].children = [{ label: '以上', value: '以上' }]
+  return result
+}

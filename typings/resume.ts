@@ -41,6 +41,10 @@ interface ExpectedJob {
    */
   expectedSalary: string
   /**
+   * 薪资范围
+   */
+  salaryRange: string;
+  /**
    * ID
    */
   id: number
@@ -145,6 +149,10 @@ interface Student {
    */
   createTime?: string;
   /**
+   * 学历
+   */
+  educationLevel: string
+  /**
    * 院系名称
    */
   departmentName?: string;
@@ -195,7 +203,7 @@ interface Student {
   /**
    * 性别
    */
-  sex?: string;
+  sex: string;
   /**
    * 技能
    */

@@ -30,6 +30,9 @@ interface Job {
    * 学历要求
    */
   educationLevel: string
+  /**
+   * 企业
+   */
   enterprise: Company
   /**
    * 企业ID
@@ -56,6 +59,10 @@ interface Job {
    */
   minSalary: number
   /**
+   * 薪资范围
+   */
+  salaryRange: string;
+  /**
    * 招聘人数
    */
   needNum: number
@@ -74,7 +81,11 @@ interface Job {
   /**
    * 工作经验
    */
-  workExperience: number
+  workExperience: string
+  /**
+   * 工作经验
+   */
+  experienceYears:string
   /**
    * 工作类型
    */

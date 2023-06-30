@@ -9,7 +9,7 @@ interface Userinfo {
   /**
    * 城市
    */
-  city?: string;
+  city: string;
   /**
    * 国家
    */
@@ -17,7 +17,7 @@ interface Userinfo {
   /**
    * 创建时间
    */
-  createTime?: Date;
+  createTime: Date;
   /**
    * 性别    0-未知、1-男性、2-女性
    */
@@ -29,11 +29,11 @@ interface Userinfo {
   /**
    * 手机号
    */
-  mobile?: string;
+  mobile: string;
   /**
    * 关联的学生id/企业id
    */
-  modelId?: number;
+  modelId: number;
   /**
    * 用户昵称
    */
@@ -45,11 +45,11 @@ interface Userinfo {
   /**
    * 省份
    */
-  province?: string;
+  province: string;
   /**
    * 用户类型
    */
-  type?: string;
+  type: string;
   /**
    * unionId
    */

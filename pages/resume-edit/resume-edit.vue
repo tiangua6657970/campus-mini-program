@@ -48,7 +48,7 @@ refresh()
         >
           <view class="expected-job-item__content mr-20">
             <view class="font-desc"
-            >{{ item.expectedPosition }}·{{ item.workType }}·{{ item.expectedSalary }}
+            >{{ item.expectedPosition }}·{{ item.workType }}·{{ item.salaryRange }}
             </view>
             <view class="font-desc mt-10">{{ item.expectedCity }}·{{ item.expectedIndustryName }}</view>
             <view class="font-desc mt-10">{{ item.arrivalDate }}</view>

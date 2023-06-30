@@ -1,9 +1,17 @@
 <script lang="ts" setup>
   import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
   import { useIndexSwiperList, useSearchJobList } from '@/service'
-  import { navigateTo, navigateToJobDetails, navigateToJobSearch, pagePaths } from '@/common/navigates'
-  import { computed, ref, watchEffect } from 'vue'
+  import {
+    navigateTo,
+    navigateToJobDetails,
+    navigateToJobSearch,
+    navigateToResumeDetails,
+    pagePaths
+  } from '@/common/navigates'
+  import { computed, ref, watch, watchEffect } from 'vue'
   import locationStore from '@/stores/location'
+  import { useSearchResumeList } from '@/service/resume'
+  import { useUserinfoStore } from '@/stores/user-center'
 
   const addressSelectorShow = ref(false)
   const addressSelectorParams = {
@@ -23,20 +31,15 @@
   })
   const currentType = ref('recommend')
   const { swiperList, refresh: refreshSwiperList } = useIndexSwiperList()
-  const {
-    query,
-    loadResult,
-    loadMore,
-    loadStatus,
-    refresh: refreshJobList,
-    noData,
-    setParamsAndRefresh
-  } = useSearchJobList()
+  const searchJobEffect = useSearchJobList()
+  const searchResumeEffect = useSearchResumeList()
+  const userinfo = useUserinfoStore.data
+  const effect = userinfo.type === 'student' ? searchJobEffect : searchResumeEffect
 
   function handleAddressSelectionConfirm(result: any) {
     const { province, city } = result
     selectedCity.value = city.name
-    setParamsAndRefresh('address', city.name)
+    effect.setParamsAndRefresh('address', city.name)
   }
 
   function handleSwiperClick(index: number) {
@@ -46,15 +49,15 @@
     }
   }
 
-  onReachBottom(() => loadMore())
+  onReachBottom(() => effect.loadMore())
   onPullDownRefresh(async () => {
-    await Promise.all([refreshSwiperList(), refreshJobList()])
+    await Promise.all([refreshSwiperList(), effect.refresh()])
     uni.stopPullDownRefresh()
   })
-  locationStore. refresh()
+  locationStore.refresh()
   refreshSwiperList()
   watchEffect(e => {
-    setParamsAndRefresh('type', currentType.value)
+    effect.setParamsAndRefresh('type', currentType.value)
   })
 </script>
 
@@ -115,9 +118,24 @@
             ></u-icon>
           </view>
         </view>
-        <cr-job-list :list="loadResult" @item-click="navigateToJobDetails" />
-        <u-loadmore :status="loadStatus" v-if="loadResult.length" @loadmore="loadMore" />
-        <cr-empty v-if="noData" :top="525" />
+        <template v-if="userinfo.type === 'student'">
+          <cr-job-list :list="searchJobEffect.loadResult.value" @item-click="navigateToJobDetails" />
+          <u-loadmore
+            :status="searchJobEffect.loadStatus.value"
+            v-if="searchJobEffect.loadResult.value.length"
+            @loadmore="searchJobEffect.loadMore"
+          />
+          <cr-empty v-if="searchJobEffect.noData.value" :top="525" />
+        </template>
+        <template v-else>
+          <cr-resume-list :list="searchResumeEffect.loadResult.value" @item-click="navigateToResumeDetails" />
+          <u-loadmore
+            :status="searchResumeEffect.loadStatus.value"
+            v-if="searchResumeEffect.loadResult.value.length"
+            @loadmore="searchResumeEffect.loadMore"
+          />
+          <cr-empty v-if="searchResumeEffect.noData.value" :top="525" />
+        </template>
         <u-picker
           v-model="addressSelectorShow"
           mode="region"
@@ -188,7 +206,7 @@
   }
 </style>
 <style>
-page {
-  background-color: #f3f8ff;
-}
+  page {
+    background-color: #f3f8ff;
+  }
 </style>

@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { computed, reactive } from "vue";
 import { __USERINFO__ } from '@/common/keys'
 
 function getLocalUserinfoStore(): Userinfo {
@@ -10,7 +10,7 @@ function getLocalUserinfoStore(): Userinfo {
   }
 }
 
-export const useUserInfoStore = reactive({
+export const useUserinfoStore = reactive({
   data: getLocalUserinfoStore(),
   update(userinfo: Userinfo) {
     this.data = userinfo

@@ -4,6 +4,7 @@
   import { getRuleByMessage } from '@/common/hooks/use-form'
   import industryList from '@/common/Industry-list'
   import { useResumeExpectedJobInfo } from '@/service/resume'
+  import { generateSalaryOptions } from '@/common/utils'
 
   interface Props {
     type?: 'add' | 'edit'
@@ -11,8 +12,8 @@
 
   const props = withDefaults(defineProps<Props>(), { type: 'add' })
   const workTypeSelectorShow = ref(false)
-  const expectedCitySelectorShow = ref(false)
-  const expectedSalarySelectorShow = ref(false)
+  const citySelectorShow = ref(false)
+  const salaryRangeSelectorShow = ref(false)
   const industrySelectorShow = ref(false)
   const arrivalDateSelectorShow = ref(false)
   const formRef = ref()
@@ -20,11 +21,11 @@
     workType: '',
     expectedCity: '',
     expectedPosition: '',
-    expectedSalary: '',
+    salaryRange: '',
     expectedIndustryName: '',
     arrivalDate: ''
   })
-  const addressSelectorParams = {
+  const citySelectorParams = {
     province: true,
     city: true,
     area: false
@@ -33,7 +34,7 @@
     { label: '全职', value: '全职' },
     { label: '兼职', value: '兼职' }
   ]
-  const expectedSalaryList = generateSalaryList()
+  const salaryRangeList = generateSalaryOptions()
   const arrivalDateList = [
     { label: '离职-随时到岗', value: '离职-随时到岗' },
     { label: '在职-月内到岗', value: '在职-月内到岗' },
@@ -50,29 +51,11 @@
       workType: getRuleByMessage('请选择工作类型'),
       expectedCity: getRuleByMessage('请选择期望城市'),
       expectedPosition: getRuleByMessage('请输入期望职位'),
-      expectedSalary: getRuleByMessage('请选择薪资范围'),
+      salaryRange: getRuleByMessage('请选择薪资范围'),
       expectedIndustryName: getRuleByMessage('请选择期望行业'),
       arrivalDate: getRuleByMessage('请选择到岗时间')
     })
   })
-
-  function generateSalaryList(count: number = 30) {
-    count += 1
-    const result = []
-    for (let i = 1; i < count; i++) {
-      const label = i + 'k'
-      const value = i + 'k'
-      const children: any[] = []
-      for (let j = i + 1; j < count; j++) {
-        const label = j + 'k'
-        const value = j + 'k'
-        children.push({ label, value })
-      }
-      result.push({ label, value, children })
-    }
-    result[result.length - 1].children = [{ label: '以上', value: '以上' }]
-    return result
-  }
 
   function handleWorkTypeSelectorConfirm(result: any) {
     form.value.workType = result[0].value
@@ -85,7 +68,7 @@
 
   function handleSalarySelectorConfirm(result: any) {
     const [{ value: value1 }, { value: value2 }] = result
-    form.value.expectedSalary = `${value1}-${value2}`
+    form.value.salaryRange = `${value1}-${value2}`
   }
 
   function handleIndustrySelectorConfirm(result: any) {
@@ -124,21 +107,21 @@
           clearable
           placeholder="请选择期望城市"
           type="select"
-          :select-open="expectedCitySelectorShow"
-          @click="expectedCitySelectorShow = true"
+          :select-open="citySelectorShow"
+          @click="citySelectorShow = true"
         />
       </u-form-item>
       <u-form-item label-width="auto" label="期望岗位" prop="expectedPosition">
         <u-input v-model="form.expectedPosition" clearable placeholder="请输入期望岗位" />
       </u-form-item>
-      <u-form-item label-width="auto" label="期望薪资" prop="expectedSalary">
+      <u-form-item label-width="auto" label="期望薪资" prop="salaryRange">
         <u-input
-          v-model="form.expectedSalary"
+          v-model="form.salaryRange"
           clearable
           placeholder="请选择期望薪资"
           type="select"
-          :select-open="expectedSalarySelectorShow"
-          @click="expectedSalarySelectorShow = true"
+          :select-open="salaryRangeSelectorShow"
+          @click="salaryRangeSelectorShow = true"
         />
       </u-form-item>
       <u-form-item label-width="auto" label="期望行业" prop="expectedIndustryName">
@@ -164,14 +147,14 @@
     </u-form>
     <u-select v-model="workTypeSelectorShow" :list="workTypeList" @confirm="handleWorkTypeSelectorConfirm" />
     <u-picker
-      v-model="expectedCitySelectorShow"
+      v-model="citySelectorShow"
       mode="region"
-      :params="addressSelectorParams"
+      :params="citySelectorParams"
       @confirm="handleAddressSelectionConfirm"
     ></u-picker>
     <u-select
-      v-model="expectedSalarySelectorShow"
-      :list="expectedSalaryList"
+      v-model="salaryRangeSelectorShow"
+      :list="salaryRangeList"
       mode="mutil-column-auto"
       @confirm="handleSalarySelectorConfirm"
     />

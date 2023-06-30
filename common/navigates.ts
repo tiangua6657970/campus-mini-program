@@ -25,8 +25,8 @@ export const pagePaths = {
   verification: '/pages/verification/verification',
   // 企业认证
   companyVerification: '/pages/company-verification/company-verification',
-  // 职位搜索
-  jobSearch: '/pages/job-search/job-search',
+  // 搜索
+  search: '/pages/search/search',
   // 职位详情
   jobDetails: '/pages/job-details/job-details',
   // 招聘会
@@ -99,6 +99,8 @@ export const pagePaths = {
   comJobEdit: '/pages/com-job-edit/com-job-edit',
   // 职位新增
   comJobAdd: '/pages/com-job-add/com-job-add',
+  // 已收藏简历
+  favoriteResumes: '/pages/favorite-resumes/favorite-resumes',
   // 简历过滤
   comResumeFilter: '/pages/com-resume-filter/com-resume-filter',
   // 企业设置
@@ -145,6 +147,13 @@ export function navigateTo(path: string, params = {}) {
 export function navigateToLogin() {
   navigateTo(pagePaths.login)
 }
+export function relaunchToLogin() {
+  uni.reLaunch({ url: pagePaths.login })
+}
+
+export function relaunchToIndex() {
+  uni.switchTab({ url: pagePaths.index })
+}
 export function navigateToRoleSelection() {
   navigateTo(pagePaths.roleSelection)
 }
@@ -162,7 +171,7 @@ export function navigateToCompanyVerification() {
 }
 
 export function navigateToJobSearch() {
-  navigateTo(pagePaths.jobSearch)
+  navigateTo(pagePaths.search)
 }
 
 export function navigateToJobDetails(item: Job) {
@@ -256,4 +265,23 @@ export function navigateToFeedback() {
 
 export function navigateToPrivacyAndSecurity() {
   navigateTo(pagePaths.privacyAndSecurity)
+}
+
+export function navigateToComCompanySettings() {
+  navigateTo(pagePaths.comCompanySettings)
+}
+
+export function navigateToComJobAdd(id?: string) {
+  if (typeof id === 'object') {
+    navigateTo(pagePaths.comJobAdd)
+    return
+  }
+  navigateTo(pagePaths.comJobAdd, { id })
+}
+export function navigateToComJobManagement() {
+  navigateTo(pagePaths.comJobManagement)
+}
+
+export function navigateToFavoriteResumes() {
+ navigateTo(pagePaths.favoriteResumes)
 }

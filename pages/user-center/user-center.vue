@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import {
-    navigateToAppliedResume,
-    navigateToFavoriteJobs,
-    navigateToFeedback,
-    navigateToInterview,
-    navigateToPrivacyAndSecurity,
-    navigateToResumeEdit,
-    navigateToSettings,
-    navigateToTermsOfService
-  } from '@/common/navigates'
-  import { useUserInfoStore } from '@/stores/user-center'
+import {
+  navigateToAppliedResume, navigateToComCompanySettings, navigateToComJobAdd, navigateToComJobManagement,
+  navigateToFavoriteJobs, navigateToFavoriteResumes,
+  navigateToFeedback,
+  navigateToInterview,
+  navigateToPrivacyAndSecurity,
+  navigateToResumeEdit,
+  navigateToSettings,
+  navigateToTermsOfService
+} from "@/common/navigates";
+  import { useUserinfoStore } from '@/stores/user-center'
 
-  const userinfo = useUserInfoStore.data
+  const userinfo = useUserinfoStore.data
 </script>
 <template>
   <view class="user-center" v-if="userinfo">
@@ -25,7 +25,11 @@
             </view>
             <u-avatar :src="userinfo.avatarUrl" size="120" />
           </view>
-          <view class="name-number-list bg-white p-20 mt-20">
+        </view>
+      </view>
+      <view style="margin-top: 580rpx">
+        <view class="name-number-list bg-white p-20 mt-20">
+          <template v-if="userinfo.type === 'student'">
             <view class="name-number-item" @click="navigateToAppliedResume">
               <view class="font-base-grey">已投简历</view>
               <view class="font-base-light mt-10">123</view>
@@ -42,46 +46,86 @@
               <view class="font-base-grey">收藏职位</view>
               <view class="font-base-light mt-10">123</view>
             </view>
-          </view>
+          </template>
+          <template v-else>
+            <view class="name-number-item" @click="navigateToComJobAdd">
+              <view class="font-base-grey">发布职位</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToComJobManagement">
+              <view class="font-base-grey">职位管理</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToFavoriteJobs">
+              <view class="font-base-grey">我看过谁</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToFavoriteResumes">
+              <view class="font-base-grey">收藏简历</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+          </template>
         </view>
-      </view>
-      <view style="margin-top: 580rpx">
-        <view class="action-list plr-30 bg-white" style="margin-top: 580rpx">
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToResumeEdit">
-            <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-resume" label="在线简历"></u-icon>
-            <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
-          </view>
-          <view class="action-item ptb-20 u-border-bottom">
-            <u-icon
-              class="cr-flex-1"
-              :size="50"
-              color="#1287d2FF"
-              name="cr-icon-resume-copy"
-              label="附件简历"
-            ></u-icon>
-            <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
-          </view>
-          <view class="action-item ptb-20 u-border-bottom">
-            <u-icon
-              class="cr-flex-1"
-              :size="50"
-              color="#1287d2FF"
-              name="cr-icon-preference"
-              label="求职意向"
-            ></u-icon>
-            <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
-          </view>
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToTermsOfService">
-            <u-icon
-              class="cr-flex-1"
-              :size="50"
-              color="#1287d2FF"
-              name="cr-icon-termsOfService"
-              label="三方协议 "
-            ></u-icon>
-            <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
-          </view>
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToFeedback">
+        <view class="action-list mt-20 p-30">
+          <template v-if="userinfo.type === 'student'">
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToResumeEdit">
+              <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-resume" label="在线简历"></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white">
+              <u-icon
+                class="cr-flex-1"
+                :size="50"
+                color="#1287d2FF"
+                name="cr-icon-resume-copy"
+                label="附件简历"
+              ></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white">
+              <u-icon
+                class="cr-flex-1"
+                :size="50"
+                color="#1287d2FF"
+                name="cr-icon-preference"
+                label="求职意向"
+              ></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToTermsOfService">
+              <u-icon
+                class="cr-flex-1"
+                :size="50"
+                color="#1287d2FF"
+                name="cr-icon-termsOfService"
+                label="三方协议 "
+              ></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+          </template>
+          <template v-else>
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToComCompanySettings">
+              <u-icon
+                class="cr-flex-1"
+                :size="50"
+                color="#1287d2FF"
+                name="cr-icon-feedback"
+                label="公司设置"
+              ></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+            <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToPrivacyAndSecurity">
+              <u-icon
+                class="cr-flex-1"
+                :size="50"
+                color="#1287d2FF"
+                name="cr-icon-security"
+                label="签章管理"
+              ></u-icon>
+              <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
+            </view>
+          </template>
+          <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToPrivacyAndSecurity">
             <u-icon
               class="cr-flex-1"
               :size="50"
@@ -91,7 +135,7 @@
             ></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToPrivacyAndSecurity">
+          <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToPrivacyAndSecurity">
             <u-icon
               class="cr-flex-1"
               :size="50"
@@ -101,7 +145,7 @@
             ></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
-          <view class="action-item ptb-20 u-border-bottom" @click="navigateToSettings">
+          <view class="action-item mb-20 p-20 u-border-bottom bg-white" @click="navigateToSettings">
             <u-icon class="cr-flex-1" :size="50" color="#1287d2FF" name="cr-icon-setting" label="设置"></u-icon>
             <u-icon :size="30" color="#999" name="arrow-right"></u-icon>
           </view>
@@ -154,6 +198,7 @@
     .action-item {
       display: flex;
       align-items: center;
+      border-radius: 15rpx;
     }
   }
 </style>
