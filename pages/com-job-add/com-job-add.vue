@@ -48,6 +48,7 @@
     })
   })
   if (props.id) {
+    uni.setNavigationBarTitle({title: '职位编辑'})
     const { jobDetails, refresh } = useJobDetails(props)
     refresh(job => form.value = job)
   }

@@ -131,8 +131,18 @@ $cr-font-color-price: #ff5200;
 }
 
 
+.ml-5 {
+  margin-left: 5rpx;
+}
+.mr-5 {
+  margin-right: 5rpx;
+}
+
 .ml-10 {
-  margin-left: 10px;
+  margin-left: 10rpx;
+}
+.mr-10 {
+  margin-right: 10rpx;
 }
 
 .mt-20 {
@@ -199,7 +209,7 @@ $cr-font-color-price: #ff5200;
 }
 
 .margin-fixed-bottom {
-  margin-bottom: 120rpx;
+  height: 120rpx;
 }
 
 .cr-flex-1 {

@@ -1,5 +1,6 @@
 export const __TOKEN__ = '__token__'
 export const __USERINFO__  = '__userinfo__'
 export const __LOCATION__ = '__location__'
-export const __HISTORY__ = '__history__'
+export const __HISTORY_JOB__ = '__history__'
+export const __HISTORY_RESUME__ = '__history_resume__'
 export const __FAVORITE__ = '__favorite__'

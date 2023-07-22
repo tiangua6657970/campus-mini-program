@@ -3,6 +3,7 @@
     avatar: string
     name: string
     desc?: string
+    badgeCount?: number
   }
 
   const props = defineProps<Props>()
@@ -13,7 +14,15 @@
 
 <template>
   <view class="cr-avatar-name-item ptb-20 u-border-bottom" @click="emit('click')">
-    <u-avatar :size="88" :src="avatar"></u-avatar>
+    <template v-if="badgeCount !== undefined">
+      <view style="position: relative;">
+        <u-avatar :size="88" :src="avatar" />
+        <u-badge type="error" count="7" :offset="[-8,-8]"></u-badge>
+      </view>
+    </template>
+    <template v-else>
+      <u-avatar :size="88" :src="avatar" />
+    </template>
     <view class="cr-avatar-name-item__content">
       <view class="font-title">{{ name }}</view>
       <view class="font-desc mt-10" v-if="desc">{{ desc }}</view>

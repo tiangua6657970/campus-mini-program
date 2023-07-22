@@ -3,12 +3,13 @@
   import { useIndexSwiperList, useSearchJobList } from '@/service'
   import {
     navigateTo,
+    navigateToComReceivedResumes,
     navigateToJobDetails,
     navigateToJobSearch,
     navigateToResumeDetails,
     pagePaths
   } from '@/common/navigates'
-  import { computed, ref, watch, watchEffect } from 'vue'
+  import { computed, ref, watchEffect } from 'vue'
   import locationStore from '@/stores/location'
   import { useSearchResumeList } from '@/service/resume'
   import { useUserinfoStore } from '@/stores/user-center'
@@ -77,7 +78,7 @@
         <view class="search">
           <u-search
             class="u-search"
-            placeholder="职位、公司"
+            :placeholder="userinfo.type === 'student' ? '职位、公司' : '简历'"
             :show-action="false"
             disabled
             @click="navigateToJobSearch"
@@ -94,6 +95,26 @@
         @click="handleSwiperClick"
       />
       <view>
+        <template v-if="userinfo.type === 'company'">
+          <view class="name-number-list p-20 mb-20 bg-white">
+            <view class="name-number-item" @click="navigateToComReceivedResumes('收到简历')">
+              <view class="font-base-grey">收到简历</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToComReceivedResumes('谁看过我')">
+              <view class="font-base-grey">谁看过我</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToComReceivedResumes('待面试')">
+              <view class="font-base-grey">待面试</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+            <view class="name-number-item" @click="navigateToComReceivedResumes('已面试')">
+              <view class="font-base-grey">已面试</view>
+              <view class="font-base-light mt-10">123</view>
+            </view>
+          </view>
+        </template>
         <view class="list-header pt-30 plr-30">
           <view class="list-header-left">
             <view

@@ -167,7 +167,7 @@ interface Student {
   /**
    * ID
    */
-  id: number;
+  id: string;
   /**
    * 身份证号
    */

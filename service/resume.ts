@@ -18,8 +18,9 @@ export function useResumeInfo() {
     return data
   }
 
-  async function refresh() {
+  async function refresh(callback?: (resume: Resume) => void) {
     resumeInfo.value = await _getResumeInfo()
+    callback && callback(resumeInfo.value)
   }
 
   return { resumeInfo, refresh }
@@ -77,6 +78,11 @@ export function useProjectExperienceInfo() {
   return { projectExperienceInfo, refresh }
 }
 
+/**
+ * 简历列表
+ * 因为后端会把简历列表的的接口分成多个的，所以根据情况修改 useSearchResumeList 或 _getResumeList，
+ * 这样所有需要获取简历的地方都调用 useSearchResumeList
+ */
 export function useSearchResumeList() {
   async function _getResumeList(params: any) {
     const { data } = await getResumeList(params)

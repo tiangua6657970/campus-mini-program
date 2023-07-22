@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import { __HISTORY__ } from '@/common/keys'
+import { __HISTORY_JOB__ } from '@/common/keys'
 
 interface HistoryStoreType {
   list: Array<string>
@@ -13,7 +13,7 @@ const MAX_COUNT = 8
 
 function getLocalHistoryStore(): string[] {
   try {
-    const result = uni.getStorageSync(__HISTORY__)
+    const result = uni.getStorageSync(__HISTORY_JOB__)
     if (Object.prototype.toString.call(result) === '[object Array]') {
       return result
     } else {
@@ -54,6 +54,6 @@ export const historyStore = reactive<HistoryStoreType>({
     this._saveToLocal()
   },
   _saveToLocal() {
-    uni.setStorageSync(__HISTORY__, this.list)
+    uni.setStorageSync(__HISTORY_JOB__, this.list)
   }
 })

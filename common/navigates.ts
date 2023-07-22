@@ -285,3 +285,13 @@ export function navigateToComJobManagement() {
 export function navigateToFavoriteResumes() {
  navigateTo(pagePaths.favoriteResumes)
 }
+
+export function navigateToComReceivedResumes(navBarTitle: string) {
+  navigateTo(pagePaths.comReceivedResumes, { navBarTitle })
+}
+export function navigateToComRefusedResumes(id: string) {
+  navigateTo(pagePaths.comRefusedResumes, { id })
+}
+export function navigateToComInterviewInvitation(id: string) {
+  navigateTo(pagePaths.comInterviewInvitation, { id })
+}

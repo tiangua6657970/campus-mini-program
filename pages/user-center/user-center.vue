@@ -189,10 +189,6 @@ import {
         flex: 1;
       }
 
-      .name-number-list {
-        border-top-left-radius: 15rpx;
-        border-top-right-radius: 15rpx;
-      }
     }
 
     .action-item {
